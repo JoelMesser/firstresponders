@@ -76,8 +76,10 @@ npx wrangler pages dev dist      # serves static + functions together
    Cloudflare's "always passes" TEST keys).
 5. **Real content** — replace all placeholder copy, the founder/veteran story (`/about`),
    reviews (don't publish fabricated ones), license numbers & certifications (e.g. IICRC).
-6. **Assets** — real logo (`public/logo.svg`), hero photo (slot in `src/components/Hero.astro`),
-   OG image (`public/og/default.svg` → a 1200×630 PNG/JPG), favicons.
+6. **Assets** — ✅ real logo integrated (`public/logo-mark.png` / `logo-full.png` →
+   header/footer, favicons, `og-default.png`). Still needed: hero photo (slot in
+   `src/components/Hero.astro`). ⚠️ The logo art bakes in **317-919-2451**; regenerate it
+   once the real MD number is set so it matches the click-to-call number.
 7. **Legal** — finalize `/privacy` and `/accessibility`.
 
 ## SEO included

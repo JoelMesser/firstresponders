@@ -11,7 +11,7 @@ interface Props {
   url: string;
   image?: string;
 }
-const { title, description, date, url, image = '/og/default.svg' } = Astro.props;
+const { title, description, date, url, image = '/og-default.png' } = Astro.props;
 
 const json = {
   '@context': 'https://schema.org',
@@ -26,7 +26,7 @@ const json = {
   publisher: {
     '@type': 'Organization',
     name: site.name,
-    logo: { '@type': 'ImageObject', url: `${site.url}/logo.svg` },
+    logo: { '@type': 'ImageObject', url: `${site.url}/logo-mark.png` },
   },
   mainEntityOfPage: { '@type': 'WebPage', '@id': new URL(url, site.url).href },
 };

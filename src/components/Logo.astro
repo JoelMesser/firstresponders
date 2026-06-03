@@ -1,24 +1,41 @@
 ---
 /**
- * Wordmark logo (typographic placeholder).
- * TODO(client): replace with the real logo SVG in /public/logo.svg and swap
- * this for an <img>. Keep dimensions stable to avoid layout shift.
+ * Brand logo: the "FR" house mark (real logo) + typographic wordmark.
+ * The mark (green/gold) only renders on light backgrounds (`variant="dark"`);
+ * on dark backgrounds (`variant="light"`) the wordmark stands alone for contrast.
+ * Fixed mark dimensions avoid layout shift.
  */
 import { site } from '../config/site';
 
 interface Props {
-  variant?: 'dark' | 'light'; // text color context
+  variant?: 'dark' | 'light'; // text color context (dark text vs light text)
   class?: string;
 }
 const { variant = 'dark', class: className = '' } = Astro.props;
 const main = variant === 'light' ? 'text-white' : 'text-green';
 const sub = variant === 'light' ? 'text-gold-light' : 'text-gold';
+const showMark = variant === 'dark';
 ---
-<span class={`flex flex-col leading-none ${className}`} aria-label={site.name}>
-  <span class={`font-display font-extrabold uppercase tracking-tight text-lg sm:text-xl ${main}`}>
-    First Response
-  </span>
-  <span class={`font-display font-semibold uppercase tracking-[0.18em] text-[0.62rem] sm:text-[0.7rem] ${sub}`}>
-    Property Solutions
+<span class={`flex items-center gap-2.5 leading-none ${className}`} aria-label={site.name}>
+  {
+    showMark && (
+      <img
+        src="/logo-header.png"
+        alt=""
+        width="44"
+        height="44"
+        class="h-11 w-11 shrink-0"
+        loading="eager"
+        decoding="async"
+      />
+    )
+  }
+  <span class="flex flex-col leading-none">
+    <span class={`font-display font-extrabold uppercase tracking-tight text-lg sm:text-xl ${main}`}>
+      First Response
+    </span>
+    <span class={`font-display font-semibold uppercase tracking-[0.18em] text-[0.62rem] sm:text-[0.7rem] ${sub}`}>
+      Property Solutions
+    </span>
   </span>
 </span>

@@ -2,10 +2,13 @@
  * Single source of truth for NAP (Name / Address / Phone), navigation, and
  * business metadata. Change the phone number HERE and it updates everywhere.
  *
- * TODO(client): `317`/`555` below is a PLACEHOLDER. `555-555-5555` is a
- * fictional, non-dialable number. Swap in the real local Central-Maryland
- * number (410 / 443 / 240 / 301) for trust + local SEO. This is the only
- * place you need to edit.
+ * TODO(client): `555-555-5555` below is a PLACEHOLDER (a fictional, non-dialable
+ * number). Swap in the real local Central-Maryland number (410 / 443 / 240 / 301)
+ * for trust + local SEO. This is the only place you need to edit.
+ *
+ * NOTE: the supplied logo image (public/logo-full.png) bakes in 317-919-2451 (an
+ * Indiana area code). When the real MD number is set here, the logo image must be
+ * regenerated to match so the brand art and click-to-call don't disagree.
  */
 
 const PHONE_DISPLAY = '555-555-5555'; // TODO(client): real 410/443/240/301 number

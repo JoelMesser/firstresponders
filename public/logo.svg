@@ -1,8 +1,0 @@
-<!-- TODO(client): replace with the real brand logo. -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" width="320" height="64">
-  <rect width="64" height="64" rx="12" fill="#006428"/>
-  <path d="M32 12l16 6v10c0 12-7 19-16 24-9-5-16-12-16-24V18l16-6z" fill="#003C18" stroke="#C0901F" stroke-width="2"/>
-  <path d="M22 32h6V22h8v10h6L32 46 22 32z" fill="#fff"/>
-  <text x="78" y="30" font-family="'Barlow Semi Condensed',sans-serif" font-size="22" font-weight="800" fill="#006428">FIRST RESPONSE</text>
-  <text x="78" y="48" font-family="'Barlow Semi Condensed',sans-serif" font-size="12" font-weight="600" letter-spacing="3" fill="#C0901F">PROPERTY SOLUTIONS</text>
-</svg>
