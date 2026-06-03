@@ -7,7 +7,7 @@ interface Props {
   eyebrow?: string;
   title?: string;
   lede?: string;
-  tone?: 'white' | 'mist' | 'green' | 'green-deep';
+  tone?: 'white' | 'mist' | 'tint' | 'green' | 'green-deep';
   align?: 'left' | 'center';
   id?: string;
   class?: string;
@@ -28,6 +28,7 @@ const {
 const tones = {
   white: 'bg-white text-ink',
   mist: 'bg-mist text-ink',
+  tint: 'bg-haze text-ink', // faint green-tinted "highlight" zone (light)
   green: 'bg-green text-white',
   'green-deep': 'bg-green-deep text-white',
 };
@@ -41,7 +42,7 @@ const alignCls = align === 'center' ? 'text-center mx-auto' : '';
       (eyebrow || title) && (
         <div class={`max-w-3xl ${alignCls} mb-8 sm:mb-12`}>
           {eyebrow && (
-            <p class={`${align === 'center' ? '' : 'accent-left'} font-display font-bold uppercase tracking-[0.14em] text-caption ${onDark ? 'text-gold-light' : 'text-gold'}`}>
+            <p class={`${align === 'center' ? '' : 'accent-left'} font-display font-bold uppercase tracking-[0.14em] text-caption ${onDark ? 'text-gold-light' : 'text-gold-deep'}`}>
               {eyebrow}
             </p>
           )}

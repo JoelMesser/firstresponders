@@ -34,18 +34,18 @@ export const site = {
   // Address / NAP. TODO(client): supply real street address + geo coordinates.
   address: {
     street: '', // TODO(client): street address (or leave blank if no storefront)
-    city: 'Eldersburg',
+    city: 'Crofton',
     region: 'MD',
     regionName: 'Maryland',
-    postalCode: '21784', // TODO(client): confirm
+    postalCode: '21114', // TODO(client): confirm
     country: 'US',
     areaLabel: 'Central Maryland',
   },
 
-  // Approx. geo center of Central MD service area. TODO(client): refine.
+  // Approx. coordinates for Crofton, MD (Anne Arundel County). TODO(client): refine.
   geo: {
-    latitude: 39.4012,
-    longitude: -76.9636,
+    latitude: 39.0012,
+    longitude: -76.6847,
   },
 
   hours: '24/7 — Open 24 hours, 7 days a week',

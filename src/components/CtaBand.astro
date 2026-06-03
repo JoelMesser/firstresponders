@@ -12,26 +12,25 @@ const {
   subtitle = 'Available 24/7 across Central Maryland. The faster we start, the less you lose.',
 } = Astro.props;
 ---
-<section class="relative overflow-hidden bg-green text-white">
-  <div class="container-px flex flex-col items-center gap-6 py-12 text-center sm:py-16">
-    <h2 class="max-w-3xl text-3xl font-extrabold sm:text-h2">{title}</h2>
-    <p class="max-w-2xl text-lg text-white/85">{subtitle}</p>
+<section class="relative overflow-hidden bg-haze text-ink">
+  <div class="h-px w-full rule-accent" aria-hidden="true"></div>
+  <div class="container-px relative flex flex-col items-center gap-6 py-12 text-center sm:py-16">
+    <span class="flex h-12 w-12 items-center justify-center rounded-full bg-green/10 text-green">
+      <Icon name="phone" size={26} />
+    </span>
+    <h2 class="max-w-3xl text-3xl font-extrabold text-ink sm:text-h2">{title}</h2>
+    <p class="max-w-2xl text-lg text-mute">{subtitle}</p>
     <div class="flex flex-col gap-3 sm:flex-row">
       <Button href={site.phone.href} size="lg" icon="phone">
         Call {site.phone.display}
       </Button>
-      <Button
-        href="/contact/"
-        variant="secondary"
-        size="lg"
-        class="!border-white !text-white hover:!bg-white hover:!text-green"
-      >
+      <Button href="/contact/" variant="secondary" size="lg">
         Request Help Online
       </Button>
     </div>
-    <p class="flex items-center gap-2 text-caption text-white/75">
-      <Icon name="clock" size={16} /> Answered 24 hours a day, 7 days a week
+    <p class="flex items-center gap-2 text-caption text-mute">
+      <Icon name="clock" size={16} class="text-green" /> Answered 24 hours a day, 7 days a week
     </p>
   </div>
-  <div class="h-1 w-full bg-gradient-to-r from-gold/30 via-gold to-gold/30" aria-hidden="true"></div>
+  <div class="h-px w-full rule-accent" aria-hidden="true"></div>
 </section>

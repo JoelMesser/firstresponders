@@ -17,59 +17,63 @@ const {
   showForm = false,
 } = Astro.props;
 ---
-<section class="relative overflow-hidden bg-green-deep text-white">
+<section class="hero-surface relative overflow-hidden text-ink">
   <!--
-    TODO(client): drop a hero photo here once supplied. Suggested:
-    <img src="/hero.jpg" alt="..." class="absolute inset-0 h-full w-full object-cover opacity-25" />
-    Keep an overlay for text contrast (WCAG AA) and set width/height to avoid CLS.
+    TODO(client): drop a hero photo here once supplied. On this LIGHT hero, place it
+    as a bordered image inside the right column (or behind, with a paper scrim for
+    contrast). Set width/height to avoid CLS.
   -->
+  <!-- Faint green dot grid for subtle texture (a green highlight, not a fill). -->
   <div
-    class="pointer-events-none absolute inset-0 opacity-[0.07]"
-    style="background-image: radial-gradient(circle at 20% 20%, #C0901F 0, transparent 40%), radial-gradient(circle at 80% 0%, #006428 0, transparent 50%);"
+    class="pointer-events-none absolute inset-0 opacity-[0.5]"
+    style="background-image: radial-gradient(rgba(7,105,44,0.10) 1px, transparent 1.4px); background-size: 24px 24px; mask-image: linear-gradient(to bottom, black, transparent 70%);"
     aria-hidden="true"
   >
   </div>
 
   <div class="container-px relative grid items-center gap-10 py-14 sm:py-20 lg:grid-cols-2 lg:gap-12">
     <div class={showForm ? '' : 'mx-auto max-w-3xl text-center'}>
-      <p class="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-green-darker/40 px-3 py-1 font-display text-caption font-semibold uppercase tracking-[0.14em] text-gold-light">
+      <p class={`inline-flex items-center gap-2 rounded-full border border-green/25 bg-green/5 px-3 py-1 font-display text-caption font-semibold uppercase tracking-[0.14em] text-green ${showForm ? '' : 'mx-auto'}`}>
         <Icon name="star" size={14} /> Veteran &amp; First Responder Owned
       </p>
-      <h1 class="mt-5 text-hero font-extrabold">{title}</h1>
-      <p class="mt-5 max-w-xl text-lg text-white/85">{subtitle}</p>
+      <h1 class="mt-5 text-hero font-extrabold text-ink">{title}</h1>
+      <p class="mt-5 max-w-xl text-lg text-mute">{subtitle}</p>
 
       <div class={`mt-8 flex flex-col gap-3 sm:flex-row ${showForm ? '' : 'sm:justify-center'}`}>
         <Button href={site.phone.href} size="lg" icon="phone">
           Call {site.phone.display}
         </Button>
-        <Button href="/contact/" variant="secondary" size="lg" class="!border-white !text-white hover:!bg-white hover:!text-green-deep">
+        <Button href="/contact/" variant="secondary" size="lg">
           Request Help Online
         </Button>
       </div>
-      <p class="mt-4 text-caption text-white/70">
+      <p class="mt-4 text-caption text-mute">
         Answered 24/7 · Fast dispatch · Direct insurance billing
       </p>
 
       <div class="mt-8">
-        <TrustBadges variant="hero" />
+        <TrustBadges />
       </div>
     </div>
 
     {
       showForm && (
-        <div class="rounded-xl border border-white/10 bg-white p-5 text-ink shadow-2xl sm:p-6">
-          <div class="mb-4">
-            <h2 class="font-display text-xl font-extrabold text-green-deep">Get Emergency Help Now</h2>
-            <p class="mt-1 text-sm text-mute">
-              Active emergency? <a href={site.phone.href} class="font-bold text-red underline">Call {site.phone.display}</a> — don't wait on a form.
-            </p>
+        <div class="overflow-hidden rounded-xl border border-line bg-white text-ink shadow-xl">
+          <div class="h-1 w-full rule-accent" aria-hidden="true" />
+          <div class="p-5 sm:p-6">
+            <div class="mb-4">
+              <h2 class="font-display text-xl font-extrabold text-green-deep">Get Emergency Help Now</h2>
+              <p class="mt-1 text-sm text-mute">
+                Active emergency? <a href={site.phone.href} class="font-bold text-red underline">Call {site.phone.display}</a> — don't wait on a form.
+              </p>
+            </div>
+            <LeadForm compact />
           </div>
-          <LeadForm compact />
         </div>
       )
     }
   </div>
 
-  <!-- Gold hairline at the base of the hero. -->
-  <div class="h-1 w-full bg-gradient-to-r from-gold/30 via-gold to-gold/30" aria-hidden="true"></div>
+  <!-- Accent hairline at the base of the hero. -->
+  <div class="h-px w-full rule-accent" aria-hidden="true"></div>
 </section>

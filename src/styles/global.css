@@ -11,18 +11,25 @@
 /* Brand tokens — source of truth (Tailwind v4 @theme). Each --color-* becomes a
    utility (e.g. --color-green-deep -> bg-green-deep / text-green-deep). */
 @theme {
-  /* Colors */
-  --color-green: #006428; /* primary brand */
-  --color-green-deep: #003c18; /* dark sections */
-  --color-green-darker: #00280f; /* footer / utility bar */
-  --color-gold: #c0901f; /* accent, rules, icons */
-  --color-gold-light: #e0bc6a; /* highlights on dark */
-  --color-red: #d7392b; /* ALL primary CTAs / urgency */
-  --color-red-dark: #a82518; /* CTA hover/gradient */
-  --color-ink: #16221b; /* body text */
-  --color-mist: #f4f6f3; /* section backgrounds */
-  --color-line: #e2e7e2; /* borders */
-  --color-mute: #5e6560; /* secondary text */
+  /* Colors.
+     Principle (from the logo): vivid brand green reads beautifully in THIN strokes
+     but is harsh as a large flat fill. So `green` is the vivid accent (icons,
+     outlines, small fills) and the `forest` tones carry big dark surfaces calmly. */
+  --color-green: #07692c; /* vivid brand accent — matches the logo mark */
+  --color-green-bright: #0a7d36; /* hover/lift on accents */
+  --color-green-deep: #103a24; /* large dark surfaces — calm desaturated forest */
+  --color-green-darker: #0b2a1a; /* footer / utility bar */
+  --color-gold: #c2a02e; /* brass gold sampled from the logo (rules, accents on dark) */
+  --color-gold-light: #e6c462; /* highlights on dark backgrounds */
+  --color-gold-deep: #8a6914; /* gold TEXT on light backgrounds (passes WCAG AA) */
+  --color-red: #d23a2b; /* ALL primary CTAs / urgency */
+  --color-red-dark: #b02719; /* CTA hover/gradient */
+  --color-ink: #18241c; /* body text */
+  --color-paper: #faf8f1; /* warm page background */
+  --color-mist: #f0efe6; /* warm section background */
+  --color-haze: #edf3ed; /* faint green-tinted section background (a green "highlight" zone) */
+  --color-line: #e6e2d6; /* warm borders */
+  --color-mute: #5f635a; /* secondary text */
 
   /* Typography */
   --font-display: "Barlow Semi Condensed", system-ui, sans-serif;
@@ -57,16 +64,18 @@
   }
 
   body {
-    @apply bg-white font-sans text-ink antialiased;
+    @apply bg-paper font-sans text-ink antialiased;
     font-size: 1.05rem;
     line-height: 1.6;
   }
 
+  /* Headings INHERIT their color from the section (so they read correctly on dark
+     and light backgrounds alike). Only set typeface + rhythm here. */
   h1,
   h2,
   h3,
   h4 {
-    @apply font-display font-extrabold text-ink;
+    @apply font-display font-extrabold;
     line-height: 1.02;
     text-wrap: balance;
   }
@@ -96,6 +105,25 @@
   /* Gold left-accent used on section eyebrows + headers. */
   .accent-left {
     @apply border-l-4 border-gold pl-4;
+  }
+
+  /* Light hero/banner surface: warm paper with the faintest green + gold glows.
+     Green is a highlight here, not a fill. Pair with text-ink. */
+  .hero-surface {
+    background:
+      radial-gradient(110% 80% at 88% -12%, rgba(194, 160, 46, 0.12), transparent 56%),
+      radial-gradient(95% 85% at 6% 0%, rgba(7, 105, 44, 0.09), transparent 55%), var(--color-paper);
+  }
+  /* Hairline rule (green→gold→green) used to cap light banners. */
+  .rule-accent {
+    background-image: linear-gradient(
+      to right,
+      transparent,
+      var(--color-green) 18%,
+      var(--color-gold) 50%,
+      var(--color-green) 82%,
+      transparent
+    );
   }
 
   /* Rendered Markdown (blog posts). Self-contained — no typography plugin. */
