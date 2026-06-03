@@ -77,8 +77,13 @@ const labelCls = 'block font-display text-sm font-semibold text-ink';
     </span>
   </label>
 
-  <!-- Turnstile widget renders here (explicit render via the script below). -->
-  <div class="cf-turnstile mt-4" data-sitekey={TURNSTILE_SITE_KEY}></div>
+  <!--
+    Turnstile runs INVISIBLY. `interaction-only` keeps the widget hidden and only
+    shows a challenge if a visitor looks suspicious — no always-on captcha box on
+    the form. It still generates the token the /api/lead Function verifies.
+    A "Privacy Policy protected by Cloudflare Turnstile" note replaces the badge.
+  -->
+  <div class="cf-turnstile" data-sitekey={TURNSTILE_SITE_KEY} data-appearance="interaction-only"></div>
 
   <div class="lead-form__error mt-3 hidden rounded-md bg-red/10 px-3 py-2 text-sm text-red-dark" role="alert"></div>
 
