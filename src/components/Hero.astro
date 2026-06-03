@@ -8,42 +8,34 @@ import TrustBadges from './TrustBadges.astro';
 interface Props {
   title?: string;
   subtitle?: string;
-  /** Show the inline lead-form card (home page). */
+  /** Show the lead-form band below the hero (home page). */
   showForm?: boolean;
+  /** Hero panel image path. */
+  image?: string;
+  imageAlt?: string;
 }
 const {
   title = 'When Disaster Strikes, We Respond First',
   subtitle = '24/7 emergency water, fire, mold, and storm restoration across Central Maryland. Veteran & first-responder owned. We secure your property, stop the damage, and work directly with your insurance.',
   showForm = false,
+  image = '/images/hero.webp',
+  imageAlt = 'A well-kept American home — the kind of property we protect and restore',
 } = Astro.props;
 ---
 <section class="hero-surface relative overflow-hidden text-ink">
-  <!--
-    TODO(client): drop a hero photo here once supplied. On this LIGHT hero, place it
-    as a bordered image inside the right column (or behind, with a paper scrim for
-    contrast). Set width/height to avoid CLS.
-  -->
-  <!-- Faint green dot grid for subtle texture (a green highlight, not a fill). -->
-  <div
-    class="pointer-events-none absolute inset-0 opacity-[0.5]"
-    style="background-image: radial-gradient(rgba(7,105,44,0.10) 1px, transparent 1.4px); background-size: 24px 24px; mask-image: linear-gradient(to bottom, black, transparent 70%);"
-    aria-hidden="true"
-  >
-  </div>
-
   <div class="container-px relative grid items-center gap-10 py-14 sm:py-20 lg:grid-cols-2 lg:gap-12">
-    <div class={showForm ? '' : 'mx-auto max-w-3xl text-center'}>
-      <p class={`inline-flex items-center gap-2 rounded-full border border-green/25 bg-green/5 px-3 py-1 font-display text-caption font-semibold uppercase tracking-[0.14em] text-green ${showForm ? '' : 'mx-auto'}`}>
+    <div>
+      <p class="inline-flex items-center gap-2 rounded-full border border-green/25 bg-green/5 px-3 py-1 font-display text-caption font-semibold uppercase tracking-[0.14em] text-green">
         <Icon name="star" size={14} /> Veteran &amp; First Responder Owned
       </p>
       <h1 class="mt-5 text-hero font-extrabold text-ink">{title}</h1>
       <p class="mt-5 max-w-xl text-lg text-mute">{subtitle}</p>
 
-      <div class={`mt-8 flex flex-col gap-3 sm:flex-row ${showForm ? '' : 'sm:justify-center'}`}>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
         <Button href={site.phone.href} size="lg" icon="phone">
           Call {site.phone.display}
         </Button>
-        <Button href="/contact/" variant="secondary" size="lg">
+        <Button href={showForm ? '#help' : '/contact/'} variant="secondary" size="lg">
           Request Help Online
         </Button>
       </div>
@@ -56,24 +48,78 @@ const {
       </div>
     </div>
 
-    {
-      showForm && (
+    <!-- Crisp photo panel. TODO(client): swap in your own on-site job photos. -->
+    <div class="relative">
+      <div
+        class="absolute -bottom-4 -right-4 -z-10 hidden h-full w-full rounded-2xl bg-green/10 lg:block"
+        aria-hidden="true"
+      >
+      </div>
+      <img
+        src={image}
+        alt={imageAlt}
+        width="1200"
+        height="1000"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        class="aspect-[5/4] w-full rounded-2xl border border-line object-cover shadow-xl"
+      />
+      <div class="absolute bottom-3 left-3 flex items-center gap-2 rounded-lg bg-white/95 px-3 py-2 shadow-md backdrop-blur">
+        <Icon name="shield" size={18} class="text-green" />
+        <span class="font-display text-sm font-bold text-ink">Licensed &amp; Insured · 24/7</span>
+      </div>
+    </div>
+  </div>
+  <div class="h-px w-full rule-accent" aria-hidden="true"></div>
+</section>
+
+{
+  showForm && (
+    <section id="help" class="scroll-mt-24 bg-haze">
+      <div class="container-px grid items-center gap-8 py-12 sm:py-16 lg:grid-cols-2">
+        <div>
+          <p class="accent-left font-display text-caption font-bold uppercase tracking-[0.14em] text-gold-deep">
+            Get Help Now
+          </p>
+          <h2 class="mt-3 text-3xl font-extrabold text-ink sm:text-h2">
+            Tell Us What Happened — We'll Respond Fast
+          </h2>
+          <p class="mt-4 max-w-xl text-lg text-mute">
+            For an active emergency, calling is fastest. Otherwise, send a few details and we'll
+            reach out right away to get a crew moving.
+          </p>
+          <a
+            href={site.phone.href}
+            class="mt-6 inline-flex items-center gap-3 rounded-xl bg-red px-5 py-3 text-white shadow-sm transition-colors hover:bg-red-dark"
+          >
+            <Icon name="phone" size={24} />
+            <span>
+              <span class="block font-display text-caption font-semibold uppercase tracking-wide text-white/80">
+                Call 24/7
+              </span>
+              <span class="block font-display text-xl font-extrabold">{site.phone.display}</span>
+            </span>
+          </a>
+        </div>
+
         <div class="overflow-hidden rounded-xl border border-line bg-white text-ink shadow-xl">
           <div class="h-1 w-full rule-accent" aria-hidden="true" />
           <div class="p-5 sm:p-6">
             <div class="mb-4">
-              <h2 class="font-display text-xl font-extrabold text-green-deep">Get Emergency Help Now</h2>
+              <h3 class="font-display text-xl font-extrabold text-green-deep">Get Emergency Help Now</h3>
               <p class="mt-1 text-sm text-mute">
-                Active emergency? <a href={site.phone.href} class="font-bold text-red underline">Call {site.phone.display}</a> — don't wait on a form.
+                Active emergency?{' '}
+                <a href={site.phone.href} class="font-bold text-red underline">
+                  Call {site.phone.display}
+                </a>{' '}
+                — don't wait on a form.
               </p>
             </div>
             <LeadForm compact />
           </div>
         </div>
-      )
-    }
-  </div>
-
-  <!-- Accent hairline at the base of the hero. -->
-  <div class="h-px w-full rule-accent" aria-hidden="true"></div>
-</section>
+      </div>
+    </section>
+  )
+}

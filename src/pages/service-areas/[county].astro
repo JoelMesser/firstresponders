@@ -34,7 +34,7 @@ const description = `Veteran & first-responder owned restoration in ${county.nam
 
   <!-- Hero -->
   <section class="hero-surface relative overflow-hidden text-ink">
-    <div class="container-px grid items-center gap-8 py-12 sm:py-16 lg:grid-cols-2">
+    <div class="container-px relative grid items-center gap-8 py-12 sm:py-16 lg:grid-cols-2 lg:gap-12">
       <div>
         <p class="inline-flex items-center gap-2 rounded-full border border-green/25 bg-green/5 px-3 py-1 font-display text-caption font-semibold uppercase tracking-[0.14em] text-green">
           <Icon name="map" size={14} /> {county.name}
@@ -54,16 +54,59 @@ const description = `Veteran & first-responder owned restoration in ${county.nam
           Serving {county.cities.slice(0, 4).join(', ')}, and surrounding {county.short} communities.
         </p>
       </div>
-      <div class="overflow-hidden rounded-xl border border-line bg-white text-ink shadow-xl" id="request">
+      <div class="relative">
+        <div
+          class="absolute -bottom-4 -right-4 -z-10 hidden h-full w-full rounded-2xl bg-green/10 lg:block"
+          aria-hidden="true"
+        >
+        </div>
+        <img
+          src="/images/hero.webp"
+          alt={`A well-kept home in ${county.name}, Maryland`}
+          width="1200"
+          height="1000"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          class="aspect-[5/4] w-full rounded-2xl border border-line object-cover shadow-xl"
+        />
+      </div>
+    </div>
+    <div class="h-px w-full rule-accent" aria-hidden="true"></div>
+  </section>
+
+  <!-- Lead form band -->
+  <section id="request" class="scroll-mt-24 bg-haze">
+    <div class="container-px grid items-center gap-8 py-12 sm:py-16 lg:grid-cols-2">
+      <div>
+        <p class="accent-left font-display text-caption font-bold uppercase tracking-[0.14em] text-gold-deep">
+          Get Help Now
+        </p>
+        <h2 class="mt-3 text-3xl font-extrabold text-ink sm:text-h2">Get Help in {county.short} County</h2>
+        <p class="mt-4 max-w-xl text-lg text-mute">
+          For an active emergency, calling is fastest. Otherwise, send a few details and we'll
+          respond right away.
+        </p>
+        <a
+          href={site.phone.href}
+          class="mt-6 inline-flex items-center gap-3 rounded-xl bg-red px-5 py-3 text-white shadow-sm transition-colors hover:bg-red-dark"
+        >
+          <Icon name="phone" size={24} />
+          <span>
+            <span class="block font-display text-caption font-semibold uppercase tracking-wide text-white/80">Call 24/7</span>
+            <span class="block font-display text-xl font-extrabold">{site.phone.display}</span>
+          </span>
+        </a>
+      </div>
+      <div class="overflow-hidden rounded-xl border border-line bg-white text-ink shadow-xl">
         <div class="h-1 w-full rule-accent" aria-hidden="true"></div>
         <div class="p-5 sm:p-6">
-          <h2 class="font-display text-xl font-extrabold text-green-deep">Get Help in {county.short}</h2>
+          <h3 class="font-display text-xl font-extrabold text-green-deep">Get Help in {county.short}</h3>
           <p class="mt-1 text-sm text-mute">Active emergency? <a href={site.phone.href} class="font-bold text-red underline">Call {site.phone.display}</a>.</p>
           <div class="mt-4"><LeadForm compact /></div>
         </div>
       </div>
     </div>
-    <div class="h-px w-full rule-accent" aria-hidden="true"></div>
   </section>
 
   <!-- Services in this county -->
