@@ -1,14 +1,14 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/schema/Breadcrumbs.astro';
 import { site } from '../config/site';
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout
   title="Privacy Policy"
   description="How First Response Property Solutions collects and uses your information."
   noindex
 >
-  <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Privacy', href: '/privacy' }]} />
+  <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Privacy', href: '/privacy/' }]} />
   <article class="container-px py-8 sm:py-12">
     <div class="post-body mx-auto max-w-2xl">
       <h1 class="font-display text-hero font-extrabold text-ink">Privacy Policy</h1>

@@ -1,26 +1,26 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import { type CollectionEntry, getCollection, render } from 'astro:content';
 import CtaBand from '../../components/CtaBand.astro';
 import ArticleSchema from '../../components/schema/Article.astro';
 import Breadcrumbs from '../../components/schema/Breadcrumbs.astro';
-import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
-  return posts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
 }
 
 interface Props {
   post: CollectionEntry<'blog'>;
 }
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 const fmt = post.data.date.toLocaleDateString('en-US', {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
 });
-const url = `/blog/${post.slug}`;
+const url = `/blog/${post.id}/`;
 ---
 <BaseLayout
   title={post.data.title}
@@ -40,7 +40,7 @@ const url = `/blog/${post.slug}`;
   <Breadcrumbs
     items={[
       { name: 'Home', href: '/' },
-      { name: 'Blog', href: '/blog' },
+      { name: 'Blog', href: '/blog/' },
       { name: post.data.title, href: url },
     ]}
   />

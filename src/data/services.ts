@@ -36,10 +36,22 @@ export const services: Service[] = [
     problem:
       'A burst pipe, appliance failure, roof leak, or flood can saturate floors, drywall, and framing within minutes. Left untreated, moisture wicks into wall cavities and subfloors, leading to mold and rot.',
     process: [
-      { title: 'Emergency response', body: 'We answer 24/7 and dispatch quickly to stop the source and assess the damage.' },
-      { title: 'Water extraction', body: 'Truck-mounted and portable extractors remove standing water fast.' },
-      { title: 'Drying & dehumidification', body: 'Air movers and commercial dehumidifiers dry structure and contents, monitored with moisture meters.' },
-      { title: 'Cleanup & restoration', body: 'We clean, sanitize, and rebuild affected areas back to pre-loss condition.' },
+      {
+        title: 'Emergency response',
+        body: 'We answer 24/7 and dispatch quickly to stop the source and assess the damage.',
+      },
+      {
+        title: 'Water extraction',
+        body: 'Truck-mounted and portable extractors remove standing water fast.',
+      },
+      {
+        title: 'Drying & dehumidification',
+        body: 'Air movers and commercial dehumidifiers dry structure and contents, monitored with moisture meters.',
+      },
+      {
+        title: 'Cleanup & restoration',
+        body: 'We clean, sanitize, and rebuild affected areas back to pre-loss condition.',
+      },
     ],
     why: [
       'Rapid 24/7 dispatch to limit secondary damage',
@@ -60,10 +72,22 @@ export const services: Service[] = [
     problem:
       'Smoke and soot are acidic and travel everywhere, etching surfaces and saturating contents with odor. Firefighting water adds a second layer of damage that must be dried out immediately.',
     process: [
-      { title: 'Assessment & securing', body: 'We assess structural safety and board up or tarp to secure the property.' },
-      { title: 'Water removal & drying', body: 'We address water and chemicals left from firefighting efforts.' },
-      { title: 'Soot & smoke cleanup', body: 'Specialized cleaning of surfaces, contents, and HVAC removes soot and residue.' },
-      { title: 'Deodorization & rebuild', body: 'Odor neutralization followed by full reconstruction of damaged areas.' },
+      {
+        title: 'Assessment & securing',
+        body: 'We assess structural safety and board up or tarp to secure the property.',
+      },
+      {
+        title: 'Water removal & drying',
+        body: 'We address water and chemicals left from firefighting efforts.',
+      },
+      {
+        title: 'Soot & smoke cleanup',
+        body: 'Specialized cleaning of surfaces, contents, and HVAC removes soot and residue.',
+      },
+      {
+        title: 'Deodorization & rebuild',
+        body: 'Odor neutralization followed by full reconstruction of damaged areas.',
+      },
     ],
     why: [
       'Soot and odor remediation, not just surface cleaning',
@@ -84,10 +108,22 @@ export const services: Service[] = [
     problem:
       'Mold can begin growing within 24-48 hours of water exposure and may hide inside walls, under flooring, and in HVAC systems. It can affect air quality and damage building materials.',
     process: [
-      { title: 'Inspection & containment', body: 'We identify affected areas and contain them to prevent spore spread.' },
-      { title: 'Air filtration', body: 'HEPA air scrubbers and negative air machines capture airborne spores.' },
-      { title: 'Removal & cleaning', body: 'We remove and dispose of affected materials and clean salvageable surfaces.' },
-      { title: 'Source correction & restoration', body: 'We address the underlying moisture and restore the area.' },
+      {
+        title: 'Inspection & containment',
+        body: 'We identify affected areas and contain them to prevent spore spread.',
+      },
+      {
+        title: 'Air filtration',
+        body: 'HEPA air scrubbers and negative air machines capture airborne spores.',
+      },
+      {
+        title: 'Removal & cleaning',
+        body: 'We remove and dispose of affected materials and clean salvageable surfaces.',
+      },
+      {
+        title: 'Source correction & restoration',
+        body: 'We address the underlying moisture and restore the area.',
+      },
     ],
     why: [
       'Proper containment to protect the rest of your home',
@@ -108,10 +144,22 @@ export const services: Service[] = [
     problem:
       'High winds, fallen trees, hail, and flooding can breach roofs and walls, letting water pour in and exposing your property to further loss until it is secured.',
     process: [
-      { title: 'Emergency securing', body: 'Board-up, roof tarping, and water diversion to stop ongoing damage.' },
-      { title: 'Water mitigation', body: 'Extraction and drying of any water intrusion from the storm.' },
-      { title: 'Debris & damage assessment', body: 'We remove debris and document all storm-related damage.' },
-      { title: 'Repairs & reconstruction', body: 'Roofing, structural, and interior repairs back to pre-loss condition.' },
+      {
+        title: 'Emergency securing',
+        body: 'Board-up, roof tarping, and water diversion to stop ongoing damage.',
+      },
+      {
+        title: 'Water mitigation',
+        body: 'Extraction and drying of any water intrusion from the storm.',
+      },
+      {
+        title: 'Debris & damage assessment',
+        body: 'We remove debris and document all storm-related damage.',
+      },
+      {
+        title: 'Repairs & reconstruction',
+        body: 'Roofing, structural, and interior repairs back to pre-loss condition.',
+      },
     ],
     why: [
       '24/7 emergency board-up and tarping',
@@ -132,10 +180,22 @@ export const services: Service[] = [
     problem:
       'Sewage backups (Category 3 "black water") and other biohazards contain bacteria and pathogens. Improper cleanup risks illness and lingering contamination.',
     process: [
-      { title: 'Containment & safety', body: 'We isolate the area and use proper PPE and protocols.' },
-      { title: 'Extraction & removal', body: 'Contaminated water and unsalvageable materials are removed and disposed of safely.' },
-      { title: 'Cleaning & disinfection', body: 'Affected areas are cleaned and sanitized with EPA-registered disinfectants.' },
-      { title: 'Drying & restoration', body: 'We dry the structure and restore the space to a safe condition.' },
+      {
+        title: 'Containment & safety',
+        body: 'We isolate the area and use proper PPE and protocols.',
+      },
+      {
+        title: 'Extraction & removal',
+        body: 'Contaminated water and unsalvageable materials are removed and disposed of safely.',
+      },
+      {
+        title: 'Cleaning & disinfection',
+        body: 'Affected areas are cleaned and sanitized with EPA-registered disinfectants.',
+      },
+      {
+        title: 'Drying & restoration',
+        body: 'We dry the structure and restore the space to a safe condition.',
+      },
     ],
     why: [
       'Trained, equipped crews for hazardous cleanup',
@@ -156,10 +216,19 @@ export const services: Service[] = [
     problem:
       'Water-, fire-, and mold-damaged materials must be removed before drying and rebuilding can succeed. Done carelessly, demolition damages salvageable structure and spreads contamination.',
     process: [
-      { title: 'Scope & protection', body: 'We identify what must come out and protect adjacent areas.' },
-      { title: 'Controlled removal', body: 'Damaged drywall, flooring, and materials are removed cleanly.' },
+      {
+        title: 'Scope & protection',
+        body: 'We identify what must come out and protect adjacent areas.',
+      },
+      {
+        title: 'Controlled removal',
+        body: 'Damaged drywall, flooring, and materials are removed cleanly.',
+      },
       { title: 'Debris disposal', body: 'Materials are hauled and disposed of properly.' },
-      { title: 'Prep for rebuild', body: 'The space is cleaned and prepared for drying or reconstruction.' },
+      {
+        title: 'Prep for rebuild',
+        body: 'The space is cleaned and prepared for drying or reconstruction.',
+      },
     ],
     why: [
       'Precision removal that protects salvageable structure',
@@ -180,10 +249,16 @@ export const services: Service[] = [
     problem:
       'After damage and demolition, your property needs to be rebuilt. Juggling separate contractors for each trade adds delay, cost, and finger-pointing.',
     process: [
-      { title: 'Scope & estimate', body: 'We define the rebuild scope and provide a documented estimate.' },
+      {
+        title: 'Scope & estimate',
+        body: 'We define the rebuild scope and provide a documented estimate.',
+      },
       { title: 'Structural & rough-in', body: 'Framing, drywall, and systems are restored.' },
       { title: 'Finishes', body: 'Flooring, paint, trim, fixtures, and final details.' },
-      { title: 'Final walkthrough', body: 'We confirm the work meets your expectations and pre-loss standard.' },
+      {
+        title: 'Final walkthrough',
+        body: 'We confirm the work meets your expectations and pre-loss standard.',
+      },
     ],
     why: [
       'One team from emergency response through final rebuild',
@@ -207,7 +282,10 @@ export const services: Service[] = [
       { title: 'Rapid dispatch', body: 'We respond 24/7 to secure your property quickly.' },
       { title: 'Board-up', body: 'Openings are boarded to keep out weather and intruders.' },
       { title: 'Roof tarping', body: 'Damaged roofs are tarped to prevent water intrusion.' },
-      { title: 'Transition to repair', body: 'Once secured, we plan mitigation and reconstruction.' },
+      {
+        title: 'Transition to repair',
+        body: 'Once secured, we plan mitigation and reconstruction.',
+      },
     ],
     why: [
       'True 24/7 emergency availability',

@@ -1,0 +1,2 @@
+# Friendly alias for the Astro-generated sitemap index.
+/sitemap.xml  /sitemap-index.xml  301

@@ -1,9 +1,9 @@
 ---
-import { site, nav } from '../config/site';
-import { services } from '../data/services';
+import { nav, site } from '../config/site';
 import { counties } from '../data/counties';
-import Logo from './Logo.astro';
+import { services } from '../data/services';
 import Icon from './Icon.astro';
+import Logo from './Logo.astro';
 
 const year = new Date().getFullYear();
 const social = Object.entries(site.social).filter(([, v]) => v);
@@ -39,7 +39,7 @@ const social = Object.entries(site.social).filter(([, v]) => v);
           {
             services.map((s) => (
               <li>
-                <a href={`/services/${s.slug}`} class="hover:text-white hover:underline">
+                <a href={`/services/${s.slug}/`} class="hover:text-white hover:underline">
                   {s.title}
                 </a>
               </li>
@@ -57,7 +57,7 @@ const social = Object.entries(site.social).filter(([, v]) => v);
           {
             counties.map((c) => (
               <li>
-                <a href={`/service-areas/${c.slug}`} class="hover:text-white hover:underline">
+                <a href={`/service-areas/${c.slug}/`} class="hover:text-white hover:underline">
                   {c.short}
                 </a>
               </li>
@@ -81,8 +81,8 @@ const social = Object.entries(site.social).filter(([, v]) => v);
               </li>
             ))
           }
-          <li><a href="/reviews" class="hover:text-white hover:underline">Reviews</a></li>
-          <li><a href="/blog" class="hover:text-white hover:underline">Blog</a></li>
+          <li><a href="/reviews/" class="hover:text-white hover:underline">Reviews</a></li>
+          <li><a href="/blog/" class="hover:text-white hover:underline">Blog</a></li>
         </ul>
       </nav>
     </div>
@@ -91,9 +91,9 @@ const social = Object.entries(site.social).filter(([, v]) => v);
       <p>
         © {year} {site.name}. All rights reserved.
         <span class="mx-1">·</span>
-        <a href="/privacy" class="hover:text-white hover:underline">Privacy</a>
+        <a href="/privacy/" class="hover:text-white hover:underline">Privacy</a>
         <span class="mx-1">·</span>
-        <a href="/accessibility" class="hover:text-white hover:underline">Accessibility</a>
+        <a href="/accessibility/" class="hover:text-white hover:underline">Accessibility</a>
       </p>
       <p class="font-semibold text-white/80">
         ★ Veteran &amp; First Responder Owned · Licensed &amp; Insured

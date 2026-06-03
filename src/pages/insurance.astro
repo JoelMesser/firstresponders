@@ -1,11 +1,11 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Section from '../components/Section.astro';
-import InsuranceSteps from '../components/InsuranceSteps.astro';
 import CtaBand from '../components/CtaBand.astro';
 import Icon from '../components/Icon.astro';
+import InsuranceSteps from '../components/InsuranceSteps.astro';
+import Section from '../components/Section.astro';
 import Breadcrumbs from '../components/schema/Breadcrumbs.astro';
 import { site } from '../config/site';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const points = [
   'We document the damage with photos, moisture readings, and a detailed scope.',
@@ -18,7 +18,7 @@ const points = [
   title="Insurance Claims — We Work Directly With Your Insurer"
   description="We make property damage insurance claims simple: documentation, direct adjuster coordination, and direct billing. Serving Central Maryland 24/7."
 >
-  <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Insurance', href: '/insurance' }]} />
+  <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Insurance', href: '/insurance/' }]} />
 
   <Section
     eyebrow="Insurance"

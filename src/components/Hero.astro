@@ -2,8 +2,8 @@
 import { site } from '../config/site';
 import Button from './Button.astro';
 import Icon from './Icon.astro';
-import TrustBadges from './TrustBadges.astro';
 import LeadForm from './LeadForm.astro';
+import TrustBadges from './TrustBadges.astro';
 
 interface Props {
   title?: string;
@@ -42,7 +42,7 @@ const {
         <Button href={site.phone.href} size="lg" icon="phone">
           Call {site.phone.display}
         </Button>
-        <Button href="/contact" variant="secondary" size="lg" class="!border-white !text-white hover:!bg-white hover:!text-green-deep">
+        <Button href="/contact/" variant="secondary" size="lg" class="!border-white !text-white hover:!bg-white hover:!text-green-deep">
           Request Help Online
         </Button>
       </div>

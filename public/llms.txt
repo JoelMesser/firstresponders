@@ -1,0 +1,53 @@
+# First Response Property Solutions
+> 24/7 emergency property restoration and repair in Central Maryland. Veteran & first-responder owned.
+
+First Response Property Solutions is a 24/7 emergency property restoration and repair company serving Central Maryland. The company is veteran and first-responder owned, licensed and insured, and works directly with customers' insurance companies. <!-- TODO(client): confirm licensing details, certifications (e.g. IICRC), and ownership story. -->
+
+## Services
+- Water Damage Restoration — extraction, structural drying, dehumidification after burst pipes, floods, and leaks
+- Fire & Smoke Damage Restoration — soot/smoke cleanup, odor removal, and rebuild
+- Mold Remediation — containment, removal, and source correction
+- Storm Damage Repair — wind, hail, and flooding response plus repairs
+- Sewage & Biohazard Cleanup — safe extraction, disinfection, and disposal
+- Selective Demolition — controlled removal of damaged materials
+- Reconstruction & Rebuild — full restoration to pre-loss condition
+- Emergency Board-Up & Roof Tarping — 24/7 securing of exposed property
+
+## Service Area (Central Maryland)
+Anne Arundel County, Howard County, Baltimore County, Prince George's County, Montgomery County, Carroll County, Frederick County, and Harford County.
+
+## Insurance
+We work directly with your insurance company: we document the damage (photos, moisture readings, detailed scope), coordinate with your adjuster, and bill your insurer directly. Customers typically pay only their deductible. <!-- TODO(client): confirm. -->
+
+## Contact
+- Phone (24/7): 555-555-5555  <!-- TODO(client): replace with the real local 410/443/240/301 number. -->
+- Email: help@firstresponsepropertysolutions.com  <!-- TODO(client): real inbox. -->
+- Website: https://firstresponsepropertysolutions.com  <!-- TODO(client): production domain. -->
+
+## Key Facts
+- Available 24 hours a day, 7 days a week for emergencies
+- Veteran & first-responder owned
+- Licensed & insured
+- One team from emergency mitigation through full reconstruction
+- For active emergencies, calling is faster than submitting the web form
+
+## FAQ
+
+Q: How fast can you respond to an emergency?
+A: We answer calls 24/7 and dispatch crews as fast as possible. For an active emergency, call rather than using the web form.
+
+Q: Does insurance cover the damage?
+A: Most sudden, accidental damage (burst pipes, fire, storms) is covered by homeowner and commercial policies. Coverage depends on the policy and cause of loss. We document everything and work directly with your insurer.
+
+Q: What areas do you serve?
+A: Central Maryland, including Anne Arundel, Howard, Baltimore, Prince George's, Montgomery, Carroll, Frederick, and Harford counties.
+
+Q: Are you licensed and insured?
+A: Yes. We are licensed and insured to perform restoration and reconstruction work in Maryland.
+
+## Links
+- Homepage: https://firstresponsepropertysolutions.com
+- Services: https://firstresponsepropertysolutions.com/services/
+- Service Areas: https://firstresponsepropertysolutions.com/service-areas/
+- Insurance: https://firstresponsepropertysolutions.com/insurance/
+- Contact: https://firstresponsepropertysolutions.com/contact/

@@ -1,6 +1,6 @@
 ---
-import Icon from './Icon.astro';
 import type { Service } from '../data/services';
+import Icon from './Icon.astro';
 
 interface Props {
   service: Service;
@@ -8,7 +8,7 @@ interface Props {
 const { service } = Astro.props;
 ---
 <a
-  href={`/services/${service.slug}`}
+  href={`/services/${service.slug}/`}
   class="group flex flex-col rounded-xl border border-line border-b-4 border-b-line bg-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-b-gold hover:shadow-lg focus-visible:border-b-gold"
 >
   <span class="flex h-12 w-12 items-center justify-center rounded-lg bg-green/10 text-green transition-colors group-hover:bg-green group-hover:text-white">

@@ -67,12 +67,12 @@ export const site = {
 
 /** Primary navigation — used by header + footer. */
 export const nav = [
-  { label: 'Services', href: '/services' },
-  { label: 'Service Areas', href: '/service-areas' },
-  { label: 'Insurance', href: '/insurance' },
-  { label: 'About', href: '/about' },
-  { label: 'FAQ', href: '/faq' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'Services', href: '/services/' },
+  { label: 'Service Areas', href: '/service-areas/' },
+  { label: 'Insurance', href: '/insurance/' },
+  { label: 'About', href: '/about/' },
+  { label: 'FAQ', href: '/faq/' },
+  { label: 'Contact', href: '/contact/' },
 ] as const;
 
 export type SiteConfig = typeof site;

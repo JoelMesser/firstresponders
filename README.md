@@ -3,9 +3,15 @@
 Production marketing site for a 24/7 emergency property restoration company serving
 Central Maryland. Built to **drive phone calls and form leads**.
 
-- **Stack:** [Astro](https://astro.build) (static/SSG) + [Tailwind CSS](https://tailwindcss.com)
+- **Stack:** [Astro 5](https://astro.build) (static/SSG) + [Tailwind CSS v4](https://tailwindcss.com) (`@tailwindcss/vite`)
 - **Host:** [Cloudflare Pages](https://pages.cloudflare.com) + one Pages Function for the lead form
 - **Lead pipeline:** form → Cloudflare Turnstile (spam) → [Resend](https://resend.com) email
+
+> Stack and conventions mirror the sibling `copa/apps/marketing` site: Astro 5, Tailwind v4
+> via `@theme` tokens in `src/styles/global.css` (no `tailwind.config`), Content Layer glob
+> loader (`src/content.config.ts`), `astro.config.ts` with sitemap `serialize` +
+> `trailingSlash: 'always'`, `@cloudflare/workers-types` + `functions/tsconfig.json`,
+> `wrangler.toml`, `public/_headers` (CSP/HSTS/cache), `public/_redirects`, `public/llms.txt`.
 
 ## Develop
 
@@ -52,8 +58,12 @@ npx wrangler pages dev dist      # serves static + functions together
 | Reviews                      | `src/data/reviews.ts`                 |
 | FAQ                          | `src/data/faq.ts`                     |
 | Blog posts                   | `src/content/blog/*.md`               |
-| Brand colors / fonts         | `tailwind.config.mjs`, `src/styles/tokens.css` |
+| Brand colors / fonts         | `src/styles/global.css` (`@theme` tokens) |
 | Lead email logic             | `functions/api/lead.ts`               |
+| Security headers / caching   | `public/_headers`                     |
+| Redirects                    | `public/_redirects`                   |
+| AI-crawler summary (GEO)     | `public/llms.txt`                     |
+| Cloudflare project config    | `wrangler.toml`                       |
 
 ## Before launch — client TODOs (search the codebase for `TODO(client)`)
 

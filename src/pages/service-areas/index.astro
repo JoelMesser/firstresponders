@@ -1,17 +1,17 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Section from '../../components/Section.astro';
 import CtaBand from '../../components/CtaBand.astro';
 import Icon from '../../components/Icon.astro';
+import Section from '../../components/Section.astro';
 import Breadcrumbs from '../../components/schema/Breadcrumbs.astro';
 import { site } from '../../config/site';
 import { counties } from '../../data/counties';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 <BaseLayout
   title="Service Areas in Central Maryland"
   description="First Response Property Solutions serves Anne Arundel, Howard, Baltimore, Prince George's, Montgomery, Carroll, Frederick, and Harford counties — 24/7 emergency restoration."
 >
-  <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Service Areas', href: '/service-areas' }]} />
+  <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Service Areas', href: '/service-areas/' }]} />
   <Section
     eyebrow="Service Areas"
     title="Serving Central Maryland, 24/7"
@@ -21,7 +21,7 @@ import { counties } from '../../data/counties';
       {
         counties.map((c) => (
           <a
-            href={`/service-areas/${c.slug}`}
+            href={`/service-areas/${c.slug}/`}
             class="group flex flex-col rounded-xl border border-line border-b-4 border-b-line bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-b-gold hover:shadow-lg"
           >
             <span class="flex h-11 w-11 items-center justify-center rounded-lg bg-green/10 text-green group-hover:bg-green group-hover:text-white">

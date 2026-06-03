@@ -18,8 +18,7 @@ interface Props {
 }
 const { compact = false } = Astro.props;
 
-const TURNSTILE_SITE_KEY =
-  import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x00000000000000000000AA'; // TODO(client): real key
+const TURNSTILE_SITE_KEY = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x00000000000000000000AA'; // TODO(client): real key
 
 const damageTypes = ['Water', 'Fire & Smoke', 'Mold', 'Storm', 'Sewage / Biohazard', 'Other'];
 

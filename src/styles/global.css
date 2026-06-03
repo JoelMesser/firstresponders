@@ -1,0 +1,149 @@
+/* Self-hosted fonts. Barlow has no variable build, so we load static weights.
+   (Display = Barlow Semi Condensed 700/800; Body = Barlow 400/500/600.) */
+@import "@fontsource/barlow/400.css";
+@import "@fontsource/barlow/500.css";
+@import "@fontsource/barlow/600.css";
+@import "@fontsource/barlow-semi-condensed/700.css";
+@import "@fontsource/barlow-semi-condensed/800.css";
+
+@import "tailwindcss";
+
+/* Brand tokens — source of truth (Tailwind v4 @theme). Each --color-* becomes a
+   utility (e.g. --color-green-deep -> bg-green-deep / text-green-deep). */
+@theme {
+  /* Colors */
+  --color-green: #006428; /* primary brand */
+  --color-green-deep: #003c18; /* dark sections */
+  --color-green-darker: #00280f; /* footer / utility bar */
+  --color-gold: #c0901f; /* accent, rules, icons */
+  --color-gold-light: #e0bc6a; /* highlights on dark */
+  --color-red: #d7392b; /* ALL primary CTAs / urgency */
+  --color-red-dark: #a82518; /* CTA hover/gradient */
+  --color-ink: #16221b; /* body text */
+  --color-mist: #f4f6f3; /* section backgrounds */
+  --color-line: #e2e7e2; /* borders */
+  --color-mute: #5e6560; /* secondary text */
+
+  /* Typography */
+  --font-display: "Barlow Semi Condensed", system-ui, sans-serif;
+  --font-sans: "Barlow", system-ui, sans-serif;
+
+  /* Type scale */
+  --text-hero: clamp(2.5rem, 6vw, 3.9rem);
+  --text-hero--line-height: 1.02;
+  --text-hero--letter-spacing: -0.01em;
+  --text-h2: 2.4rem;
+  --text-h2--line-height: 1.05;
+  --text-h3: 1.25rem;
+  --text-h3--line-height: 1.15;
+  --text-caption: 0.85rem;
+  --text-caption--line-height: 1.3;
+
+  /* Container width (powers max-w-content) */
+  --container-content: 72rem;
+}
+
+@layer base {
+  /* Tailwind v4 defaults `border` to currentColor; restore a sensible default. */
+  *,
+  ::before,
+  ::after {
+    border-color: var(--color-line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-extrabold text-ink;
+    line-height: 1.02;
+    text-wrap: balance;
+  }
+
+  /* Visible, consistent focus ring for keyboard users (WCAG AA). */
+  :focus-visible {
+    outline: 3px solid var(--color-gold);
+    outline-offset: 2px;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  /* Fixed-nav scroll offset for in-page anchors. */
+  :target {
+    scroll-margin-top: 90px;
+  }
+}
+
+@layer components {
+  /* Centered content container used across sections. */
+  .container-px {
+    @apply mx-auto w-full max-w-content px-5 sm:px-6 lg:px-8;
+  }
+
+  /* Gold left-accent used on section eyebrows + headers. */
+  .accent-left {
+    @apply border-l-4 border-gold pl-4;
+  }
+
+  /* Rendered Markdown (blog posts). Self-contained — no typography plugin. */
+  .post-body {
+    @apply text-ink;
+  }
+  .post-body > * + * {
+    margin-top: 1.1em;
+  }
+  .post-body p,
+  .post-body li {
+    @apply text-mute;
+    line-height: 1.7;
+  }
+  .post-body h2 {
+    @apply mt-10 font-display text-2xl font-bold text-ink;
+  }
+  .post-body h3 {
+    @apply mt-8 font-display text-h3 font-bold text-ink;
+  }
+  .post-body ul {
+    @apply list-disc space-y-1 pl-5;
+  }
+  .post-body ol {
+    @apply list-decimal space-y-1 pl-5;
+  }
+  .post-body a {
+    @apply font-medium text-green underline underline-offset-2 hover:text-green-deep;
+  }
+  .post-body strong {
+    @apply font-semibold text-ink;
+  }
+  .post-body blockquote {
+    @apply border-l-4 border-gold bg-mist py-2 pl-4 text-mute;
+  }
+  .post-body hr {
+    @apply my-8 border-line;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

@@ -1,23 +1,35 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Section from '../components/Section.astro';
 import CtaBand from '../components/CtaBand.astro';
-import TrustBadges from '../components/TrustBadges.astro';
 import Icon from '../components/Icon.astro';
+import Section from '../components/Section.astro';
 import Breadcrumbs from '../components/schema/Breadcrumbs.astro';
+import TrustBadges from '../components/TrustBadges.astro';
 import { site } from '../config/site';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const values = [
-  { icon: 'clock', title: 'Urgency', body: 'We treat your emergency like one. Fast response limits damage and cost.' },
-  { icon: 'shield', title: 'Integrity', body: 'Honest assessments, clear documentation, and no upselling what you don\'t need.' },
-  { icon: 'badge', title: 'Service', body: 'A first-responder mindset: show up, take charge, and take care of people.' },
+  {
+    icon: 'clock',
+    title: 'Urgency',
+    body: 'We treat your emergency like one. Fast response limits damage and cost.',
+  },
+  {
+    icon: 'shield',
+    title: 'Integrity',
+    body: "Honest assessments, clear documentation, and no upselling what you don't need.",
+  },
+  {
+    icon: 'badge',
+    title: 'Service',
+    body: 'A first-responder mindset: show up, take charge, and take care of people.',
+  },
 ];
 ---
 <BaseLayout
   title="About First Response Property Solutions"
   description="Veteran & first-responder owned property restoration serving Central Maryland. Our mission: respond first, restore fast, and treat every property like our own."
 >
-  <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'About', href: '/about' }]} />
+  <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'About', href: '/about/' }]} />
 
   <Section
     eyebrow="About Us"

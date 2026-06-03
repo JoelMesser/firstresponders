@@ -1,10 +1,10 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Section from '../../components/Section.astro';
+import { getCollection } from 'astro:content';
 import CtaBand from '../../components/CtaBand.astro';
 import Icon from '../../components/Icon.astro';
+import Section from '../../components/Section.astro';
 import Breadcrumbs from '../../components/schema/Breadcrumbs.astro';
-import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
@@ -16,7 +16,7 @@ const fmt = (d: Date) =>
   title="Blog — Restoration Tips & Insurance Guidance"
   description="Practical advice on water, fire, mold, and storm damage, plus insurance guidance, from First Response Property Solutions in Central Maryland."
 >
-  <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Blog', href: '/blog' }]} />
+  <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Blog', href: '/blog/' }]} />
 
   <Section
     eyebrow="Blog"
@@ -31,7 +31,7 @@ const fmt = (d: Date) =>
               {fmt(post.data.date)}
             </p>
             <h2 class="mt-2 font-display text-h3 font-bold text-ink">
-              <a href={`/blog/${post.slug}`} class="after:absolute group-hover:text-green">
+              <a href={`/blog/${post.id}/`} class="after:absolute group-hover:text-green">
                 {post.data.title}
               </a>
             </h2>

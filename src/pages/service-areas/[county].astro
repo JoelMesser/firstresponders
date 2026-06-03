@@ -1,16 +1,16 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Section from '../../components/Section.astro';
-import CtaBand from '../../components/CtaBand.astro';
 import Button from '../../components/Button.astro';
+import CtaBand from '../../components/CtaBand.astro';
 import Icon from '../../components/Icon.astro';
-import LeadForm from '../../components/LeadForm.astro';
-import ServiceCard from '../../components/ServiceCard.astro';
 import InsuranceSteps from '../../components/InsuranceSteps.astro';
+import LeadForm from '../../components/LeadForm.astro';
+import Section from '../../components/Section.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
 import Breadcrumbs from '../../components/schema/Breadcrumbs.astro';
 import { site } from '../../config/site';
 import { counties } from '../../data/counties';
 import { services } from '../../data/services';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 
 export function getStaticPaths() {
   return counties.map((county) => ({
@@ -27,8 +27,8 @@ const description = `Veteran & first-responder owned restoration in ${county.nam
   <Breadcrumbs
     items={[
       { name: 'Home', href: '/' },
-      { name: 'Service Areas', href: '/service-areas' },
-      { name: county.short, href: `/service-areas/${county.slug}` },
+      { name: 'Service Areas', href: '/service-areas/' },
+      { name: county.short, href: `/service-areas/${county.slug}/` },
     ]}
   />
 
