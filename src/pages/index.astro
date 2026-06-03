@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import InsuranceSteps from '../components/InsuranceSteps.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import ReviewCard from '../components/ReviewCard.astro';
+import CountyChips from '../components/CountyChips.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Button from '../components/Button.astro';
+import Icon from '../components/Icon.astro';
+import { site } from '../config/site';
+import { reviews } from '../data/reviews';
+
+const whyUs = [
+  { icon: 'clock', title: 'True 24/7 Response', body: 'Disasters don\'t keep business hours. We answer and dispatch around the clock, every day.' },
+  { icon: 'badge', title: 'Veteran & First Responder Owned', body: 'Built on discipline, urgency, and service. We show up and do it right.' },
+  { icon: 'shield', title: 'Licensed & Insured', body: 'Qualified crews and full coverage — TODO(client): add license #s and IICRC certs.' },
+  { icon: 'doc', title: 'Insurance Made Easy', body: 'We document everything and bill your insurer directly, so you can focus on recovery.' },
+  { icon: 'map', title: 'Local to Central Maryland', body: 'We know the area and respond fast across the counties we serve.' },
+  { icon: 'check', title: 'One Team, Start to Finish', body: 'From emergency mitigation through full reconstruction — no contractor juggling.' },
+];
+---
+<BaseLayout
+  title={`${site.name} | 24/7 Emergency Restoration in Central Maryland`}
+  description={site.description}
+>
+  <Hero showForm />
+
+  <!-- Services -->
+  <Section
+    tone="mist"
+    eyebrow="What We Do"
+    title="Emergency Restoration & Repair Services"
+    lede="Water, fire, mold, storm, and more — we handle the whole job, from securing your property to the final rebuild."
+  >
+    <ServiceGrid />
+    <div class="mt-8">
+      <Button href="/services" variant="secondary">View All Services</Button>
+    </div>
+  </Section>
+
+  <!-- Insurance steps -->
+  <Section
+    eyebrow="Insurance"
+    title="We Work Directly With Your Insurance"
+    lede="Filing a claim is stressful. We make it simple — documenting the damage and dealing with your adjuster so you don't have to."
+  >
+    <InsuranceSteps />
+    <div class="mt-8">
+      <Button href="/insurance" variant="secondary">How the Claim Process Works</Button>
+    </div>
+  </Section>
+
+  <!-- Why us -->
+  <Section tone="green-deep" eyebrow="Why First Response" title="Calm Authority When You Need It Most">
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        whyUs.map((item) => (
+          <div class="rounded-xl border border-white/10 bg-white/5 p-6">
+            <span class="flex h-11 w-11 items-center justify-center rounded-lg bg-gold/20 text-gold-light">
+              <Icon name={item.icon} size={22} />
+            </span>
+            <h3 class="mt-4 font-display text-h3 font-bold text-white">{item.title}</h3>
+            <p class="mt-2 text-sm text-white/80">{item.body}</p>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
+
+  <!-- Reviews -->
+  <Section
+    tone="mist"
+    eyebrow="Reviews"
+    title="Trusted by Maryland Homeowners"
+    lede="TODO(client): replace placeholder reviews with real testimonials."
+  >
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {reviews.slice(0, 3).map((review) => <ReviewCard review={review} />)}
+    </div>
+    <div class="mt-8">
+      <Button href="/reviews" variant="secondary">Read More Reviews</Button>
+    </div>
+  </Section>
+
+  <!-- Service areas -->
+  <Section
+    eyebrow="Service Areas"
+    title="Serving Central Maryland"
+    lede="Fast, local 24/7 response across the counties we serve."
+  >
+    <CountyChips />
+    <div class="mt-8">
+      <Button href="/service-areas" variant="secondary">See All Service Areas</Button>
+    </div>
+  </Section>
+
+  <CtaBand />
+</BaseLayout>

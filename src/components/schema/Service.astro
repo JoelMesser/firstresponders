@@ -1,0 +1,25 @@
+---
+/**
+ * Service JSON-LD for a service detail page.
+ */
+import { site } from '../../config/site';
+import { counties } from '../../data/counties';
+import type { Service } from '../../data/services';
+
+interface Props {
+  service: Service;
+}
+const { service } = Astro.props;
+
+const json = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: service.name,
+  name: `${service.name} in ${site.address.areaLabel}`,
+  description: service.intro,
+  provider: { '@id': `${site.url}/#business` },
+  areaServed: counties.map((c) => ({ '@type': 'AdministrativeArea', name: `${c.name}, Maryland` })),
+  url: `${site.url}/services/${service.slug}`,
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(json)} is:inline />

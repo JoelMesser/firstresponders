@@ -1,0 +1,37 @@
+---
+import { site } from '../config/site';
+import Button from './Button.astro';
+import Icon from './Icon.astro';
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+}
+const {
+  title = 'Property Damage Emergency? We Respond First.',
+  subtitle = 'Available 24/7 across Central Maryland. The faster we start, the less you lose.',
+} = Astro.props;
+---
+<section class="relative overflow-hidden bg-green text-white">
+  <div class="container-px flex flex-col items-center gap-6 py-12 text-center sm:py-16">
+    <h2 class="max-w-3xl text-3xl font-extrabold sm:text-h2">{title}</h2>
+    <p class="max-w-2xl text-lg text-white/85">{subtitle}</p>
+    <div class="flex flex-col gap-3 sm:flex-row">
+      <Button href={site.phone.href} size="lg" icon="phone">
+        Call {site.phone.display}
+      </Button>
+      <Button
+        href="/contact"
+        variant="secondary"
+        size="lg"
+        class="!border-white !text-white hover:!bg-white hover:!text-green"
+      >
+        Request Help Online
+      </Button>
+    </div>
+    <p class="flex items-center gap-2 text-caption text-white/75">
+      <Icon name="clock" size={16} /> Answered 24 hours a day, 7 days a week
+    </p>
+  </div>
+  <div class="h-1 w-full bg-gradient-to-r from-gold/30 via-gold to-gold/30" aria-hidden="true"></div>
+</section>

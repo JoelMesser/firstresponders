@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Brand tokens as CSS custom properties (mirror tailwind.config). */
+:root {
+  --green: #006428;
+  --green-deep: #003c18;
+  --green-darker: #00280f;
+  --gold: #c0901f;
+  --gold-light: #e0bc6a;
+  --red: #d7392b;
+  --red-dark: #a82518;
+  --ink: #16221b;
+  --mist: #f4f6f3;
+  --line: #e2e7e2;
+  --mute: #5e6560;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-extrabold text-ink;
+    line-height: 1.02;
+    text-wrap: balance;
+  }
+
+  /* Visible, consistent focus ring for keyboard users (WCAG AA). */
+  :focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 2px;
+  }
+
+  a {
+    color: inherit;
+  }
+}
+
+@layer components {
+  /* Centered content container used across sections. */
+  .container-px {
+    @apply mx-auto w-full max-w-content px-5 sm:px-6 lg:px-8;
+  }
+
+  /* Gold left-accent used on section eyebrows + headers. */
+  .accent-left {
+    @apply border-l-4 border-gold pl-4;
+  }
+
+  /* Rendered Markdown (blog posts). Self-contained — no typography plugin. */
+  .post-body {
+    @apply text-ink;
+  }
+  .post-body > * + * {
+    margin-top: 1.1em;
+  }
+  .post-body p,
+  .post-body li {
+    @apply text-mute;
+    line-height: 1.7;
+  }
+  .post-body h2 {
+    @apply mt-10 font-display text-2xl font-bold text-ink;
+  }
+  .post-body h3 {
+    @apply mt-8 font-display text-h3 font-bold text-ink;
+  }
+  .post-body ul {
+    @apply list-disc space-y-1 pl-5;
+  }
+  .post-body ol {
+    @apply list-decimal space-y-1 pl-5;
+  }
+  .post-body a {
+    @apply font-medium text-green underline underline-offset-2 hover:text-green-deep;
+  }
+  .post-body strong {
+    @apply font-semibold text-ink;
+  }
+  .post-body blockquote {
+    @apply border-l-4 border-gold bg-mist py-2 pl-4 text-mute;
+  }
+  .post-body hr {
+    @apply my-8 border-line;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

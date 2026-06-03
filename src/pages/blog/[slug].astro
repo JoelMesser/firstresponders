@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import ArticleSchema from '../../components/schema/Article.astro';
+import Breadcrumbs from '../../components/schema/Breadcrumbs.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
+}
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+const { post } = Astro.props;
+const { Content } = await post.render();
+const fmt = post.data.date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+const url = `/blog/${post.slug}`;
+---
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  image={post.data.ogImage}
+  type="article"
+>
+  <ArticleSchema
+    slot="head"
+    title={post.data.title}
+    description={post.data.description}
+    date={post.data.date}
+    url={url}
+    image={post.data.ogImage}
+  />
+
+  <Breadcrumbs
+    items={[
+      { name: 'Home', href: '/' },
+      { name: 'Blog', href: '/blog' },
+      { name: post.data.title, href: url },
+    ]}
+  />
+
+  <article class="container-px py-8 sm:py-12">
+    <div class="mx-auto max-w-2xl">
+      <p class="font-display text-caption font-semibold uppercase tracking-wide text-gold">{fmt}</p>
+      <h1 class="mt-2 text-hero font-extrabold text-ink">{post.data.title}</h1>
+      <p class="mt-3 text-lg text-mute">{post.data.description}</p>
+      <div class="post-body mt-8">
+        <Content />
+      </div>
+    </div>
+  </article>
+
+  <CtaBand />
+</BaseLayout>

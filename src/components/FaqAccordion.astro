@@ -1,0 +1,31 @@
+---
+/**
+ * Accessible accordion using native <details>/<summary> — no JS required.
+ */
+import Icon from './Icon.astro';
+import type { Faq } from '../data/faq';
+
+interface Props {
+  faqs: Faq[];
+}
+const { faqs } = Astro.props;
+---
+<div class="divide-y divide-line overflow-hidden rounded-xl border border-line bg-white">
+  {
+    faqs.map((faq, i) => (
+      <details class="group" open={i === 0}>
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-display text-h3 font-bold text-ink [&::-webkit-details-marker]:hidden hover:bg-mist">
+          <span>{faq.question}</span>
+          <Icon
+            name="arrow"
+            size={20}
+            class="shrink-0 rotate-90 text-gold transition-transform group-open:-rotate-90"
+          />
+        </summary>
+        <div class="px-5 pb-5 text-mute">
+          <p>{faq.answer}</p>
+        </div>
+      </details>
+    ))
+  }
+</div>

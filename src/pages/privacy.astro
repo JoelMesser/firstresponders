@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/schema/Breadcrumbs.astro';
+import { site } from '../config/site';
+---
+<BaseLayout
+  title="Privacy Policy"
+  description="How First Response Property Solutions collects and uses your information."
+  noindex
+>
+  <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Privacy', href: '/privacy' }]} />
+  <article class="container-px py-8 sm:py-12">
+    <div class="post-body mx-auto max-w-2xl">
+      <h1 class="font-display text-hero font-extrabold text-ink">Privacy Policy</h1>
+      <p>
+        <strong>TODO(client):</strong> Replace this stub with your reviewed privacy policy.
+        The text below is placeholder language only and is not legal advice.
+      </p>
+      <h2>Information We Collect</h2>
+      <p>
+        When you submit our contact form, we collect the information you provide — such as your
+        name, phone number, property address, and a description of your situation — solely to
+        respond to your request.
+      </p>
+      <h2>How We Use It</h2>
+      <p>
+        We use your information to contact you about your inquiry and provide our services. We do
+        not sell your personal information.
+      </p>
+      <h2>Spam Protection</h2>
+      <p>
+        We use Cloudflare Turnstile to protect our forms from abuse. Its use is subject to
+        Cloudflare's privacy policy.
+      </p>
+      <h2>Contact</h2>
+      <p>
+        Questions about this policy? Email <a href={`mailto:${site.email}`}>{site.email}</a> or
+        call <a href={site.phone.href}>{site.phone.display}</a>.
+      </p>
+    </div>
+  </article>
+</BaseLayout>

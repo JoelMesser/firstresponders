@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import Icon from '../../components/Icon.astro';
+import Breadcrumbs from '../../components/schema/Breadcrumbs.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+<BaseLayout
+  title="Blog — Restoration Tips & Insurance Guidance"
+  description="Practical advice on water, fire, mold, and storm damage, plus insurance guidance, from First Response Property Solutions in Central Maryland."
+>
+  <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Blog', href: '/blog' }]} />
+
+  <Section
+    eyebrow="Blog"
+    title="Restoration Tips & Insurance Guidance"
+    lede="Straight talk to help you protect your property and navigate a claim."
+  >
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        posts.map((post) => (
+          <article class="group flex flex-col rounded-xl border border-line border-b-4 border-b-line bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-b-gold hover:shadow-lg">
+            <p class="font-display text-caption font-semibold uppercase tracking-wide text-gold">
+              {fmt(post.data.date)}
+            </p>
+            <h2 class="mt-2 font-display text-h3 font-bold text-ink">
+              <a href={`/blog/${post.slug}`} class="after:absolute group-hover:text-green">
+                {post.data.title}
+              </a>
+            </h2>
+            <p class="mt-2 flex-1 text-sm text-mute">{post.data.description}</p>
+            <span class="mt-4 inline-flex items-center gap-1 font-display text-sm font-bold uppercase tracking-wide text-green">
+              Read more <Icon name="arrow" size={16} class="transition-transform group-hover:translate-x-1" />
+            </span>
+          </article>
+        ))
+      }
+    </div>
+  </Section>
+
+  <CtaBand />
+</BaseLayout>

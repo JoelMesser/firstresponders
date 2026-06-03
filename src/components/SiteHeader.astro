@@ -1,0 +1,77 @@
+---
+import { site, nav } from '../config/site';
+import Logo from './Logo.astro';
+import Icon from './Icon.astro';
+import Button from './Button.astro';
+
+const path = Astro.url.pathname;
+const isActive = (href: string) =>
+  href === '/' ? path === '/' : path === href || path.startsWith(href + '/');
+---
+<header class="sticky top-0 z-40 border-b border-line bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
+  <div class="container-px flex items-center justify-between gap-4 py-3">
+    <a href="/" class="shrink-0 rounded-sm" aria-label={`${site.name} — home`}>
+      <Logo />
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden items-center gap-6 lg:flex" aria-label="Primary">
+      {
+        nav.map((item) => (
+          <a
+            href={item.href}
+            class={`font-display font-semibold uppercase tracking-wide text-[0.92rem] transition-colors hover:text-green ${
+              isActive(item.href) ? 'text-green' : 'text-ink'
+            }`}
+            aria-current={isActive(item.href) ? 'page' : undefined}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="flex items-center gap-2 sm:gap-3">
+      <a
+        href={site.phone.href}
+        class="hidden items-center gap-2 font-display font-bold text-green hover:text-green-deep sm:flex"
+      >
+        <Icon name="phone" size={20} />
+        <span class="tabular-nums">{site.phone.display}</span>
+      </a>
+      <Button href={site.phone.href} size="md" class="hidden sm:inline-flex" icon="phone">
+        Call Now
+      </Button>
+
+      <!-- Mobile menu toggle -->
+      <details class="lg:hidden">
+        <summary
+          class="flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-md border border-line text-ink [&::-webkit-details-marker]:hidden"
+          aria-label="Open menu"
+        >
+          <Icon name="menu" size={24} />
+        </summary>
+        <div class="absolute inset-x-0 top-full border-b border-line bg-white shadow-lg">
+          <nav class="container-px flex flex-col py-3" aria-label="Mobile">
+            {
+              nav.map((item) => (
+                <a
+                  href={item.href}
+                  class={`border-b border-line/70 py-3 font-display font-semibold uppercase tracking-wide ${
+                    isActive(item.href) ? 'text-green' : 'text-ink'
+                  }`}
+                  aria-current={isActive(item.href) ? 'page' : undefined}
+                >
+                  {item.label}
+                </a>
+              ))
+            }
+            <Button href={site.phone.href} size="lg" class="mt-4 w-full" icon="phone">
+              Call {site.phone.display}
+            </Button>
+          </nav>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>

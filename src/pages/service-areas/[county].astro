@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import Button from '../../components/Button.astro';
+import Icon from '../../components/Icon.astro';
+import LeadForm from '../../components/LeadForm.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import InsuranceSteps from '../../components/InsuranceSteps.astro';
+import Breadcrumbs from '../../components/schema/Breadcrumbs.astro';
+import { site } from '../../config/site';
+import { counties } from '../../data/counties';
+import { services } from '../../data/services';
+
+export function getStaticPaths() {
+  return counties.map((county) => ({
+    params: { county: county.slug },
+    props: { county },
+  }));
+}
+
+const { county } = Astro.props;
+const heading = `24/7 Emergency Restoration in ${county.name}`;
+const description = `Veteran & first-responder owned restoration in ${county.name}, MD. Water, fire, mold, storm, and biohazard cleanup plus full reconstruction. Call ${site.phone.display}.`;
+---
+<BaseLayout title={heading} description={description}>
+  <Breadcrumbs
+    items={[
+      { name: 'Home', href: '/' },
+      { name: 'Service Areas', href: '/service-areas' },
+      { name: county.short, href: `/service-areas/${county.slug}` },
+    ]}
+  />
+
+  <!-- Hero -->
+  <section class="bg-green-deep text-white">
+    <div class="container-px grid items-center gap-8 py-12 sm:py-16 lg:grid-cols-2">
+      <div>
+        <p class="inline-flex items-center gap-2 rounded-full border border-gold/40 px-3 py-1 font-display text-caption font-semibold uppercase tracking-[0.14em] text-gold-light">
+          <Icon name="map" size={14} /> {county.name}
+        </p>
+        <h1 class="mt-5 text-hero font-extrabold">{heading}</h1>
+        <p class="mt-4 max-w-xl text-lg text-white/85">
+          {county.blurb} We're veteran & first-responder owned, licensed & insured, and we
+          work directly with your insurance.
+        </p>
+        <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+          <Button href={site.phone.href} size="lg" icon="phone">Call {site.phone.display}</Button>
+          <Button href="#request" variant="secondary" size="lg" class="!border-white !text-white hover:!bg-white hover:!text-green-deep">
+            Request Help
+          </Button>
+        </div>
+        <p class="mt-5 text-caption text-white/70">
+          Serving {county.cities.slice(0, 4).join(', ')}, and surrounding {county.short} communities.
+        </p>
+      </div>
+      <div class="rounded-xl border border-white/10 bg-white p-5 text-ink shadow-2xl sm:p-6" id="request">
+        <h2 class="font-display text-xl font-extrabold text-green-deep">Get Help in {county.short}</h2>
+        <p class="mt-1 text-sm text-mute">Active emergency? <a href={site.phone.href} class="font-bold text-red underline">Call {site.phone.display}</a>.</p>
+        <div class="mt-4"><LeadForm compact /></div>
+      </div>
+    </div>
+    <div class="h-1 w-full bg-gradient-to-r from-gold/30 via-gold to-gold/30" aria-hidden="true"></div>
+  </section>
+
+  <!-- Services in this county -->
+  <Section
+    tone="mist"
+    eyebrow="Services"
+    title={`Restoration Services in ${county.short} County`}
+    lede="Full-service emergency response and repair, available around the clock."
+  >
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {services.map((service) => <ServiceCard service={service} />)}
+    </div>
+  </Section>
+
+  <!-- Cities -->
+  <Section eyebrow="Local Coverage" title={`Communities We Serve in ${county.short} County`}>
+    <ul class="flex flex-wrap gap-2.5">
+      {
+        county.cities.map((city) => (
+          <li class="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-4 py-2 font-display text-sm font-semibold text-ink">
+            <Icon name="map" size={15} class="text-gold" /> {city}
+          </li>
+        ))
+      }
+    </ul>
+    <p class="mt-4 text-sm text-mute">
+      TODO(client): expand with neighborhoods/ZIP codes for stronger local SEO.
+    </p>
+  </Section>
+
+  <!-- Insurance -->
+  <Section tone="mist" eyebrow="Insurance" title="We Work Directly With Your Insurer">
+    <InsuranceSteps />
+  </Section>
+
+  <CtaBand title={`Property Damage in ${county.short} County? Call Now.`} subtitle={`24/7 emergency response across ${county.name}.`} />
+</BaseLayout>

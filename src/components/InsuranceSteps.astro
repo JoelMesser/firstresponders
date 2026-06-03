@@ -1,0 +1,33 @@
+---
+import Icon from './Icon.astro';
+
+/** 4-step claim process. TODO(client): confirm wording matches your workflow. */
+const steps = [
+  { icon: 'phone', title: 'Call Us 24/7', body: 'Reach a real person any time. We dispatch fast and start emergency mitigation.' },
+  { icon: 'doc', title: 'We Document Everything', body: 'Photos, moisture readings, and a detailed scope your adjuster needs for the claim.' },
+  { icon: 'shield', title: 'We Work With Your Insurer', body: 'We coordinate directly with your adjuster and bill your insurance company.' },
+  { icon: 'check', title: 'We Restore Your Property', body: 'From mitigation through full reconstruction — back to pre-loss condition.' },
+];
+
+interface Props {
+  tone?: 'mist' | 'white';
+}
+const { tone = 'mist' } = Astro.props;
+const onDark = false;
+---
+<ol class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+  {
+    steps.map((step, i) => (
+      <li class="relative rounded-xl border border-line bg-white p-6">
+        <span class="absolute right-4 top-4 font-display text-4xl font-extrabold text-line">
+          {String(i + 1).padStart(2, '0')}
+        </span>
+        <span class="flex h-12 w-12 items-center justify-center rounded-lg bg-green text-white">
+          <Icon name={step.icon} size={24} />
+        </span>
+        <h3 class="mt-4 font-display text-h3 font-bold text-ink">{step.title}</h3>
+        <p class="mt-2 text-sm text-mute">{step.body}</p>
+      </li>
+    ))
+  }
+</ol>

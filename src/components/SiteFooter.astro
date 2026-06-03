@@ -1,0 +1,114 @@
+---
+import { site, nav } from '../config/site';
+import { services } from '../data/services';
+import { counties } from '../data/counties';
+import Logo from './Logo.astro';
+import Icon from './Icon.astro';
+
+const year = new Date().getFullYear();
+const social = Object.entries(site.social).filter(([, v]) => v);
+---
+<footer class="bg-green-darker text-white/85">
+  <div class="container-px py-12 sm:py-16">
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      <!-- Brand + NAP -->
+      <div>
+        <Logo variant="light" />
+        <p class="mt-4 text-sm text-white/70">{site.tagline}</p>
+        <address class="mt-4 not-italic text-sm leading-relaxed">
+          <p class="font-semibold text-white">{site.address.areaLabel}</p>
+          {site.address.street && <p>{site.address.street}</p>}
+          <p>{site.address.city}, {site.address.region} {site.address.postalCode}</p>
+        </address>
+        <a
+          href={site.phone.href}
+          class="mt-4 inline-flex items-center gap-2 font-display text-xl font-extrabold text-gold-light hover:text-white"
+        >
+          <Icon name="phone" size={22} />
+          {site.phone.display}
+        </a>
+        <p class="mt-1 text-caption text-white/60">{site.hours}</p>
+      </div>
+
+      <!-- Services -->
+      <nav aria-label="Services">
+        <h2 class="font-display text-caption font-bold uppercase tracking-[0.14em] text-gold-light">
+          Services
+        </h2>
+        <ul class="mt-4 space-y-2 text-sm">
+          {
+            services.map((s) => (
+              <li>
+                <a href={`/services/${s.slug}`} class="hover:text-white hover:underline">
+                  {s.title}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <!-- Service Areas -->
+      <nav aria-label="Service areas">
+        <h2 class="font-display text-caption font-bold uppercase tracking-[0.14em] text-gold-light">
+          Service Areas
+        </h2>
+        <ul class="mt-4 space-y-2 text-sm">
+          {
+            counties.map((c) => (
+              <li>
+                <a href={`/service-areas/${c.slug}`} class="hover:text-white hover:underline">
+                  {c.short}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <!-- Company -->
+      <nav aria-label="Company">
+        <h2 class="font-display text-caption font-bold uppercase tracking-[0.14em] text-gold-light">
+          Company
+        </h2>
+        <ul class="mt-4 space-y-2 text-sm">
+          {
+            nav.map((item) => (
+              <li>
+                <a href={item.href} class="hover:text-white hover:underline">
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+          <li><a href="/reviews" class="hover:text-white hover:underline">Reviews</a></li>
+          <li><a href="/blog" class="hover:text-white hover:underline">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="mt-12 flex flex-col gap-4 border-t border-white/10 pt-6 text-caption text-white/60 sm:flex-row sm:items-center sm:justify-between">
+      <p>
+        © {year} {site.name}. All rights reserved.
+        <span class="mx-1">·</span>
+        <a href="/privacy" class="hover:text-white hover:underline">Privacy</a>
+        <span class="mx-1">·</span>
+        <a href="/accessibility" class="hover:text-white hover:underline">Accessibility</a>
+      </p>
+      <p class="font-semibold text-white/80">
+        ★ Veteran &amp; First Responder Owned · Licensed &amp; Insured
+      </p>
+      {
+        social.length > 0 && (
+          <div class="flex gap-3">
+            {social.map(([key, url]) => (
+              <a href={url} class="hover:text-white" aria-label={key}>
+                {key}
+              </a>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import CtaBand from '../components/CtaBand.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import Icon from '../components/Icon.astro';
+import Breadcrumbs from '../components/schema/Breadcrumbs.astro';
+import { site } from '../config/site';
+
+const values = [
+  { icon: 'clock', title: 'Urgency', body: 'We treat your emergency like one. Fast response limits damage and cost.' },
+  { icon: 'shield', title: 'Integrity', body: 'Honest assessments, clear documentation, and no upselling what you don\'t need.' },
+  { icon: 'badge', title: 'Service', body: 'A first-responder mindset: show up, take charge, and take care of people.' },
+];
+---
+<BaseLayout
+  title="About First Response Property Solutions"
+  description="Veteran & first-responder owned property restoration serving Central Maryland. Our mission: respond first, restore fast, and treat every property like our own."
+>
+  <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'About', href: '/about' }]} />
+
+  <Section
+    eyebrow="About Us"
+    title="Veteran & First Responder Owned"
+    lede="TODO(client): replace with the real founder story, background, and credentials."
+  >
+    <div class="grid gap-8 lg:grid-cols-3">
+      <div class="prose-tight space-y-4 text-lg text-mute lg:col-span-2">
+        <p>
+          First Response Property Solutions was founded on a simple idea: the people who run
+          toward emergencies should be the ones you call when disaster hits your property.
+          <strong class="text-ink"> TODO(client): add the founder's service background</strong>
+          (military / fire / EMS / police) and what led them to restoration work.
+        </p>
+        <p>
+          We bring a first-responder mindset to every job — calm under pressure, fast to act,
+          and relentless about doing it right. From the first emergency call through the final
+          coat of paint, you get one accountable team that treats your home or business like
+          our own.
+        </p>
+        <p>
+          We serve homeowners and businesses across {site.address.areaLabel}, and we work
+          directly with your insurance so recovery is one less thing to worry about.
+        </p>
+      </div>
+      <aside class="rounded-xl border border-line border-l-4 border-l-gold bg-mist p-6">
+        <h2 class="font-display text-h3 font-bold text-green-deep">Our Mission</h2>
+        <p class="mt-2 text-mute">
+          To respond first, restore fast, and bring calm authority to people on the worst day
+          of their year.
+        </p>
+        <div class="mt-5"><TrustBadges /></div>
+      </aside>
+    </div>
+  </Section>
+
+  <Section tone="mist" eyebrow="What We Stand For" title="Our Values">
+    <div class="grid gap-5 sm:grid-cols-3">
+      {
+        values.map((v) => (
+          <div class="rounded-xl border border-line bg-white p-6">
+            <span class="flex h-11 w-11 items-center justify-center rounded-lg bg-green text-white">
+              <Icon name={v.icon} size={22} />
+            </span>
+            <h3 class="mt-4 font-display text-h3 font-bold text-ink">{v.title}</h3>
+            <p class="mt-2 text-sm text-mute">{v.body}</p>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
+
+  <CtaBand />
+</BaseLayout>

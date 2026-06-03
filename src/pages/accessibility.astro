@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/schema/Breadcrumbs.astro';
+import { site } from '../config/site';
+---
+<BaseLayout
+  title="Accessibility Statement"
+  description="First Response Property Solutions is committed to making our website accessible to everyone."
+  noindex
+>
+  <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Accessibility', href: '/accessibility' }]} />
+  <article class="container-px py-8 sm:py-12">
+    <div class="post-body mx-auto max-w-2xl">
+      <h1 class="font-display text-hero font-extrabold text-ink">Accessibility Statement</h1>
+      <p>
+        <strong>TODO(client):</strong> Review and finalize this statement. The text below is a
+        placeholder.
+      </p>
+      <p>
+        We are committed to ensuring our website is accessible to people of all abilities. We aim
+        to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA.
+      </p>
+      <h2>Ongoing Effort</h2>
+      <p>
+        Accessibility is an ongoing effort. If you encounter any barrier on our site, please let
+        us know so we can fix it.
+      </p>
+      <h2>Contact Us</h2>
+      <p>
+        Email <a href={`mailto:${site.email}`}>{site.email}</a> or call
+        <a href={site.phone.href}>{site.phone.display}</a> and we'll be glad to help or provide
+        information in an alternative format.
+      </p>
+    </div>
+  </article>
+</BaseLayout>

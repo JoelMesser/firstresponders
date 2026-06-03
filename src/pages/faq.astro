@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import FaqAccordion from '../components/FaqAccordion.astro';
+import FaqPageSchema from '../components/schema/FaqPage.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Breadcrumbs from '../components/schema/Breadcrumbs.astro';
+import { faqs } from '../data/faq';
+---
+<BaseLayout
+  title="Frequently Asked Questions"
+  description="Answers about emergency restoration: response time, insurance coverage, cost, licensing, service areas, and what to do first after damage."
+>
+  <FaqPageSchema slot="head" faqs={faqs} />
+  <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'FAQ', href: '/faq' }]} />
+
+  <Section
+    eyebrow="FAQ"
+    title="Frequently Asked Questions"
+    lede="Quick answers to the questions we hear most. Still not sure? Call us anytime."
+  >
+    <div class="max-w-3xl">
+      <FaqAccordion faqs={faqs} />
+    </div>
+  </Section>
+
+  <CtaBand title="Still Have Questions? Call Us 24/7." />
+</BaseLayout>

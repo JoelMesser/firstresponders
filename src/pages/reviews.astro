@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import ReviewCard from '../components/ReviewCard.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Breadcrumbs from '../components/schema/Breadcrumbs.astro';
+import { reviews } from '../data/reviews';
+---
+<BaseLayout
+  title="Reviews & Testimonials"
+  description="See what Central Maryland homeowners say about First Response Property Solutions. 24/7 emergency restoration, done right."
+>
+  <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Reviews', href: '/reviews' }]} />
+
+  <Section
+    eyebrow="Reviews"
+    title="What Our Customers Say"
+    lede="TODO(client): replace placeholder reviews with real, verifiable testimonials. Do not publish fabricated reviews."
+  >
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {reviews.map((review) => <ReviewCard review={review} />)}
+    </div>
+  </Section>
+
+  <CtaBand title="Join Our Satisfied Customers" />
+</BaseLayout>
