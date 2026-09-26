@@ -2,19 +2,10 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
 
-// TODO(client): replace with the production domain once chosen.
-const SITE = 'https://firstresponsepropertysolutions.com';
+const SITE = 'https://frpsmd.com';
 
 // High-value SEO landing pages (boosted priority in the sitemap).
-const PRIORITY_PAGES = [
-  '/services',
-  '/service-areas',
-  '/insurance',
-  '/about',
-  '/contact',
-  '/faq',
-  '/reviews',
-];
+const PRIORITY_PAGES = ['/services', '/service-areas', '/about', '/contact', '/faq', '/reviews'];
 
 export default defineConfig({
   site: SITE,

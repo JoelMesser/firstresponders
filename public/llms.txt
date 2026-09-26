@@ -1,53 +1,56 @@
 # First Response Property Solutions
-> 24/7 emergency property restoration and repair in Central Maryland. Veteran & first-responder owned.
+> Property management support, inspections, and handyman services in Central Maryland. Veteran & first-responder owned.
 
-First Response Property Solutions is a 24/7 emergency property restoration and repair company serving Central Maryland. The company is veteran and first-responder owned, licensed and insured, and works directly with customers' insurance companies. <!-- TODO(client): confirm licensing details, certifications (e.g. IICRC), and ownership story. -->
+First Response Property Solutions is a property services company serving Central Maryland: property management support for landlords and property managers, property inspections, handyman repairs, and interior/exterior maintenance including power washing, gutter cleaning, yard cleanup, debris removal, and fence & gate repair. The company is veteran and first-responder owned, licensed and insured, and provides free itemized estimates. <!-- TODO(client): confirm licensing details and ownership story. -->
 
 ## Services
-- Water Damage Restoration — extraction, structural drying, dehumidification after burst pipes, floods, and leaks
-- Fire & Smoke Damage Restoration — soot/smoke cleanup, odor removal, and rebuild
-- Mold Remediation — containment, removal, and source correction
-- Storm Damage Repair — wind, hail, and flooding response plus repairs
-- Sewage & Biohazard Cleanup — safe extraction, disinfection, and disposal
-- Selective Demolition — controlled removal of damaged materials
-- Reconstruction & Rebuild — full restoration to pre-loss condition
-- Emergency Board-Up & Roof Tarping — 24/7 securing of exposed property
+- Property Management & Maintenance — turnovers, recurring maintenance, and on-call repairs for landlords, property managers, and out-of-town owners
+- Property & Site Inspections — roof, drainage, gutter, and fence inspections with photo reports
+- Handyman & General Repairs — interior and exterior repairs, punch lists, and odd jobs
+- Power Washing & Exterior Cleaning — siding (vinyl/brick, up to two-story), porches, patios, walkways, and pavers
+- Gutter Cleaning, Flush & Repair — cleaning, downspout flushing, re-securing, and minor repairs
+- Yard Cleanup & Overgrowth Removal — overgrowth clearing, sapling and root removal, green-waste hauling
+- Debris & Waste Removal — junk, brush, and project debris hauled (no hazardous materials)
+- Fence & Gate Repair — gates rehung and aligned, posts reset, sections repaired, full-run inspections
 
 ## Service Area (Central Maryland)
 Anne Arundel County, Howard County, Baltimore County, Prince George's County, Montgomery County, Carroll County, Frederick County, and Harford County.
 
-## Insurance
-We work directly with your insurance company: we document the damage (photos, moisture readings, detailed scope), coordinate with your adjuster, and bill your insurer directly. Customers typically pay only their deductible. <!-- TODO(client): confirm. -->
+## How It Works
+Call or request online → walkthrough and free itemized estimate → scheduled work by one crew → final walkthrough with before/after photos and one clean invoice.
 
 ## Contact
-- Phone (24/7): 555-555-5555  <!-- TODO(client): replace with the real local 410/443/240/301 number. -->
-- Email: help@firstresponsepropertysolutions.com  <!-- TODO(client): real inbox. -->
-- Website: https://firstresponsepropertysolutions.com  <!-- TODO(client): production domain. -->
+- Phone: 317-919-2451
+- Email: help@frpsmd.com  <!-- TODO(client): confirm inbox exists. -->
+- Website: https://frpsmd.com
 
 ## Key Facts
-- Available 24 hours a day, 7 days a week for emergencies
 - Veteran & first-responder owned
 - Licensed & insured
-- One team from emergency mitigation through full reconstruction
-- For active emergencies, calling is faster than submitting the web form
+- Free, itemized estimates
+- One crew for repairs, maintenance, cleanup, and hauling — inside and out
+- Serves homeowners, landlords, and property managers; open 7 days a week
 
 ## FAQ
 
-Q: How fast can you respond to an emergency?
-A: We answer calls 24/7 and dispatch crews as fast as possible. For an active emergency, call rather than using the web form.
+Q: What services do you offer?
+A: Property management support, inspections, handyman repairs, power washing, gutter cleaning and repair, yard and overgrowth cleanup, debris removal (no HAZMAT), and fence & gate repair.
 
-Q: Does insurance cover the damage?
-A: Most sudden, accidental damage (burst pipes, fire, storms) is covered by homeowner and commercial policies. Coverage depends on the policy and cause of loss. We document everything and work directly with your insurer.
+Q: Do you work with landlords and property managers?
+A: Yes — turnovers, recurring maintenance, inspections, and on-call repairs, with photo documentation and itemized invoices that are easy to pass through to owners.
+
+Q: How much does it cost?
+A: Estimates are free and itemized. For straightforward jobs (debris piles, small repairs) we can often quote from photos.
 
 Q: What areas do you serve?
 A: Central Maryland, including Anne Arundel, Howard, Baltimore, Prince George's, Montgomery, Carroll, Frederick, and Harford counties.
 
 Q: Are you licensed and insured?
-A: Yes. We are licensed and insured to perform restoration and reconstruction work in Maryland.
+A: Yes. We are licensed and insured to work on residential and rental properties in Maryland.
 
 ## Links
-- Homepage: https://firstresponsepropertysolutions.com
-- Services: https://firstresponsepropertysolutions.com/services/
-- Service Areas: https://firstresponsepropertysolutions.com/service-areas/
-- Insurance: https://firstresponsepropertysolutions.com/insurance/
-- Contact: https://firstresponsepropertysolutions.com/contact/
+- Homepage: https://frpsmd.com
+- Services: https://frpsmd.com/services/
+- Service Areas: https://frpsmd.com/service-areas/
+- Reviews: https://frpsmd.com/reviews/
+- Contact: https://frpsmd.com/contact/

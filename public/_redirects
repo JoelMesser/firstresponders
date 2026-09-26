@@ -1,2 +1,6 @@
 # Friendly alias for the Astro-generated sitemap index.
 /sitemap.xml  /sitemap-index.xml  301
+# The insurance page was removed when the business repositioned to
+# property management / inspections / handyman services.
+/insurance/  /services/  301
+/insurance  /services/  301

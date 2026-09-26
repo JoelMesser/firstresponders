@@ -26,9 +26,9 @@ interface LeadFields {
   name: string;
   phone: string;
   address: string;
-  damageType: string;
+  serviceType: string;
   message: string;
-  emergency: string;
+  urgent: string;
   company: string; // honeypot
   'cf-turnstile-response': string;
 }
@@ -95,10 +95,10 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   // --- Validate ---
   const name = get('name');
   const phone = get('phone');
-  const damageType = get('damageType');
-  if (!name || !phone || !damageType) {
+  const serviceType = get('serviceType');
+  if (!name || !phone || !serviceType) {
     return wantsJson
-      ? json({ error: 'Please fill in your name, phone, and type of damage.' }, 400)
+      ? json({ error: 'Please fill in your name, phone, and what you need.' }, 400)
       : Response.redirect(new URL('/contact?error=1', request.url).toString(), 303);
   }
 
@@ -117,16 +117,16 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   // --- Compose + send via Resend ---
   const address = get('address');
   const message = get('message');
-  const emergency = get('emergency') ? 'YES — ACTIVE EMERGENCY' : 'No';
-  const subject = `${get('emergency') ? '🚨 EMERGENCY ' : ''}Lead: ${name} — ${damageType}`;
+  const urgent = get('urgent') ? 'YES — URGENT' : 'No';
+  const subject = `${get('urgent') ? '🚨 URGENT ' : ''}Lead: ${name} — ${serviceType}`;
   const html = `
     <h2>New Lead — First Response Property Solutions</h2>
     <table cellpadding="6" style="border-collapse:collapse">
       <tr><td><strong>Name</strong></td><td>${escapeHtml(name)}</td></tr>
       <tr><td><strong>Phone</strong></td><td>${escapeHtml(phone)}</td></tr>
       <tr><td><strong>Address</strong></td><td>${escapeHtml(address) || '—'}</td></tr>
-      <tr><td><strong>Damage Type</strong></td><td>${escapeHtml(damageType)}</td></tr>
-      <tr><td><strong>Emergency</strong></td><td>${emergency}</td></tr>
+      <tr><td><strong>Service</strong></td><td>${escapeHtml(serviceType)}</td></tr>
+      <tr><td><strong>Urgent</strong></td><td>${urgent}</td></tr>
       <tr><td><strong>Message</strong></td><td>${escapeHtml(message) || '—'}</td></tr>
     </table>`;
 

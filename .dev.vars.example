@@ -15,8 +15,8 @@ RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxx
 
 # Where leads are delivered.
 # TODO(client): real destination inbox.
-LEAD_TO_EMAIL=leads@firstresponsepropertysolutions.com
+LEAD_TO_EMAIL=leads@frpsmd.com
 
 # Verified Resend sender (must be on a domain verified in Resend).
 # TODO(client): verified sender address.
-LEAD_FROM_EMAIL=leads@firstresponsepropertysolutions.com
+LEAD_FROM_EMAIL=leads@frpsmd.com

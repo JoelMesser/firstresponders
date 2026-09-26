@@ -20,7 +20,16 @@ const { compact = false } = Astro.props;
 
 const TURNSTILE_SITE_KEY = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x00000000000000000000AA'; // TODO(client): real key
 
-const damageTypes = ['Water', 'Fire & Smoke', 'Mold', 'Storm', 'Sewage / Biohazard', 'Other'];
+const serviceTypes = [
+  'Property Management',
+  'Inspection',
+  'Handyman / Repairs',
+  'Power Washing',
+  'Gutter Cleaning / Repair',
+  'Yard or Debris Cleanup',
+  'Fence & Gate',
+  'Other',
+];
 
 const inputCls =
   'w-full rounded-md border border-line bg-white px-3.5 py-2.5 text-ink placeholder:text-mute/70 focus:border-green focus:outline-none focus:ring-2 focus:ring-green/30';
@@ -55,24 +64,24 @@ const labelCls = 'block font-display text-sm font-semibold text-ink';
   </div>
 
   <div class="mt-4">
-    <label class={labelCls} for="lf-damage">Type of Damage <span class="text-red">*</span></label>
-    <select class={`mt-1 ${inputCls}`} id="lf-damage" name="damageType" required>
+    <label class={labelCls} for="lf-service">What do you need? <span class="text-red">*</span></label>
+    <select class={`mt-1 ${inputCls}`} id="lf-service" name="serviceType" required>
       <option value="" disabled selected>Select…</option>
-      {damageTypes.map((t) => <option value={t}>{t}</option>)}
+      {serviceTypes.map((t) => <option value={t}>{t}</option>)}
     </select>
   </div>
 
   <div class="mt-4">
-    <label class={labelCls} for="lf-message">What happened?</label>
-    <textarea class={`mt-1 ${inputCls}`} id="lf-message" name="message" rows={compact ? 2 : 3} placeholder="Briefly describe the damage…"></textarea>
+    <label class={labelCls} for="lf-message">Tell us about the job</label>
+    <textarea class={`mt-1 ${inputCls}`} id="lf-message" name="message" rows={compact ? 2 : 3} placeholder="Briefly describe what needs doing…"></textarea>
   </div>
 
   <label class="mt-4 flex items-start gap-2.5 rounded-md bg-red/5 p-3 text-sm">
-    <input type="checkbox" name="emergency" value="yes" class="mt-0.5 h-5 w-5 accent-red" />
+    <input type="checkbox" name="urgent" value="yes" class="mt-0.5 h-5 w-5 accent-red" />
     <span class="text-ink">
-      <strong>This is an active emergency.</strong>
+      <strong>This is urgent.</strong>
       <span class="block text-mute">
-        For active emergencies, please <a href={site.phone.href} class="font-bold text-red underline">call {site.phone.display}</a> now — don't wait on a form.
+        For urgent property issues, <a href={site.phone.href} class="font-bold text-red underline">calling {site.phone.display}</a> is faster than a form.
       </span>
     </span>
   </label>
@@ -103,7 +112,7 @@ const labelCls = 'block font-display text-sm font-semibold text-ink';
   </span>
   <h3 class="mt-4 font-display text-h3 font-bold text-green-deep">Request received</h3>
   <p class="mt-2 text-mute">
-    Thanks — we'll be in touch shortly. If this is an active emergency, please
+    Thanks — we'll be in touch shortly. If this is urgent, please
     <a href={site.phone.href} class="font-bold text-red underline">call {site.phone.display}</a> now.
   </p>
 </div>

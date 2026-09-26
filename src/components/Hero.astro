@@ -15,11 +15,11 @@ interface Props {
   imageAlt?: string;
 }
 const {
-  title = 'When Disaster Strikes, We Respond First',
-  subtitle = '24/7 emergency water, fire, mold, and storm restoration across Central Maryland. Veteran & first-responder owned. We secure your property, stop the damage, and work directly with your insurance.',
+  title = 'Your First Call Can Solve It All',
+  subtitle = 'Property management support, inspections, handyman repairs, and maintenance — inside and out — across Central Maryland. Veteran & first-responder owned: one trusted crew for every job on your list.',
   showForm = false,
   image = '/images/hero.webp',
-  imageAlt = 'A well-kept American home — the kind of property we protect and restore',
+  imageAlt = 'A well-kept American home — the kind of property we maintain and care for',
 } = Astro.props;
 ---
 <section class="hero-surface relative overflow-hidden text-ink">
@@ -36,11 +36,11 @@ const {
           Call {site.phone.display}
         </Button>
         <Button href={showForm ? '#help' : '/contact/'} variant="secondary" size="lg">
-          Request Help Online
+          Request a Free Estimate
         </Button>
       </div>
       <p class="mt-4 text-caption text-mute">
-        Answered 24/7 · Fast dispatch · Direct insurance billing
+        Fast scheduling · Free estimates · Licensed & insured
       </p>
 
       <div class="mt-8">
@@ -67,7 +67,7 @@ const {
       />
       <div class="absolute bottom-3 left-3 flex items-center gap-2 rounded-lg bg-white/95 px-3 py-2 shadow-md backdrop-blur">
         <Icon name="shield" size={18} class="text-green" />
-        <span class="font-display text-sm font-bold text-ink">Licensed &amp; Insured · 24/7</span>
+        <span class="font-display text-sm font-bold text-ink">Licensed &amp; Insured · Veteran Owned</span>
       </div>
     </div>
   </div>
@@ -83,11 +83,11 @@ const {
             Get Help Now
           </p>
           <h2 class="mt-3 text-3xl font-extrabold text-ink sm:text-h2">
-            Tell Us What Happened — We'll Respond Fast
+            Tell Us What You Need — We'll Respond Fast
           </h2>
           <p class="mt-4 max-w-xl text-lg text-mute">
-            For an active emergency, calling is fastest. Otherwise, send a few details and we'll
-            reach out right away to get a crew moving.
+            Send a few details about the job and we'll reach out right away with an honest
+            estimate and a real timeline. Urgent property issue? Calling is fastest.
           </p>
           <a
             href={site.phone.href}
@@ -96,7 +96,7 @@ const {
             <Icon name="phone" size={24} />
             <span>
               <span class="block font-display text-caption font-semibold uppercase tracking-wide text-white/80">
-                Call 24/7
+                Call Us
               </span>
               <span class="block font-display text-xl font-extrabold">{site.phone.display}</span>
             </span>
@@ -107,13 +107,13 @@ const {
           <div class="h-1 w-full rule-accent" aria-hidden="true" />
           <div class="p-5 sm:p-6">
             <div class="mb-4">
-              <h3 class="font-display text-xl font-extrabold text-green-deep">Get Emergency Help Now</h3>
+              <h3 class="font-display text-xl font-extrabold text-green-deep">Get a Free Estimate</h3>
               <p class="mt-1 text-sm text-mute">
-                Active emergency?{' '}
+                Urgent issue?{' '}
                 <a href={site.phone.href} class="font-bold text-red underline">
                   Call {site.phone.display}
                 </a>{' '}
-                — don't wait on a form.
+                — it's faster than a form.
               </p>
             </div>
             <LeadForm compact />

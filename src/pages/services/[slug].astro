@@ -85,8 +85,8 @@ const otherServices = services.filter((s) => s.slug !== service.slug).slice(0, 4
           Need {service.title} Help in {site.address.areaLabel}?
         </h2>
         <p class="mt-4 max-w-xl text-lg text-mute">
-          For an active emergency, calling is fastest. Otherwise, send a few details and we'll
-          respond right away.
+          Send a few details and we'll respond fast with an honest estimate. Urgent issue?
+          Calling is fastest.
         </p>
         <a
           href={site.phone.href}
@@ -94,7 +94,7 @@ const otherServices = services.filter((s) => s.slug !== service.slug).slice(0, 4
         >
           <Icon name="phone" size={24} />
           <span>
-            <span class="block font-display text-caption font-semibold uppercase tracking-wide text-white/80">Call 24/7</span>
+            <span class="block font-display text-caption font-semibold uppercase tracking-wide text-white/80">Call Us</span>
             <span class="block font-display text-xl font-extrabold">{site.phone.display}</span>
           </span>
         </a>
@@ -102,8 +102,8 @@ const otherServices = services.filter((s) => s.slug !== service.slug).slice(0, 4
       <div class="overflow-hidden rounded-xl border border-line bg-white text-ink shadow-xl">
         <div class="h-1 w-full rule-accent" aria-hidden="true"></div>
         <div class="p-5 sm:p-6">
-          <h3 class="font-display text-xl font-extrabold text-green-deep">Get Help Now</h3>
-          <p class="mt-1 text-sm text-mute">Active emergency? <a href={site.phone.href} class="font-bold text-red underline">Call {site.phone.display}</a>.</p>
+          <h3 class="font-display text-xl font-extrabold text-green-deep">Get a Free Estimate</h3>
+          <p class="mt-1 text-sm text-mute">Urgent issue? <a href={site.phone.href} class="font-bold text-red underline">Call {site.phone.display}</a>.</p>
           <div class="mt-4"><LeadForm compact /></div>
         </div>
       </div>
@@ -111,7 +111,7 @@ const otherServices = services.filter((s) => s.slug !== service.slug).slice(0, 4
   </section>
 
   <!-- Problem -->
-  <Section eyebrow="The Problem" title={`Why ${service.title} Can't Wait`}>
+  <Section eyebrow="The Problem" title="The Problem We Solve">
     <p class="max-w-3xl text-lg text-mute">{service.problem}</p>
   </Section>
 
@@ -132,7 +132,7 @@ const otherServices = services.filter((s) => s.slug !== service.slug).slice(0, 4
     </ol>
   </Section>
 
-  <!-- Why us + insurance -->
+  <!-- Why us + good-to-know -->
   <Section eyebrow="Why First Response" title="The Right Team for the Job">
     <div class="grid gap-8 lg:grid-cols-2">
       <ul class="space-y-3">
@@ -148,9 +148,9 @@ const otherServices = services.filter((s) => s.slug !== service.slug).slice(0, 4
         }
       </ul>
       <div class="rounded-xl border border-line border-l-4 border-l-gold bg-mist p-6">
-        <h3 class="font-display text-h3 font-bold text-green-deep">Insurance</h3>
-        <p class="mt-2 text-mute">{service.insurance}</p>
-        <Button href="/insurance/" variant="ghost" class="mt-3">How the claim process works →</Button>
+        <h3 class="font-display text-h3 font-bold text-green-deep">Good to Know</h3>
+        <p class="mt-2 text-mute">{service.note}</p>
+        <Button href="/contact/" variant="ghost" class="mt-3">Get a free estimate →</Button>
       </div>
     </div>
   </Section>

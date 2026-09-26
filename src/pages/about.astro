@@ -10,8 +10,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const values = [
   {
     icon: 'clock',
-    title: 'Urgency',
-    body: 'We treat your emergency like one. Fast response limits damage and cost.',
+    title: 'Reliability',
+    body: 'We show up when we say, finish what we start, and keep you informed in between.',
   },
   {
     icon: 'shield',
@@ -27,7 +27,7 @@ const values = [
 ---
 <BaseLayout
   title="About First Response Property Solutions"
-  description="Veteran & first-responder owned property restoration serving Central Maryland. Our mission: respond first, restore fast, and treat every property like our own."
+  description="Veteran & first-responder owned property services in Central Maryland. Our mission: answer the call, do it right, and treat every property like our own."
 >
   <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'About', href: '/about/' }]} />
 
@@ -39,27 +39,27 @@ const values = [
     <div class="grid gap-8 lg:grid-cols-3">
       <div class="prose-tight space-y-4 text-lg text-mute lg:col-span-2">
         <p>
-          First Response Property Solutions was founded on a simple idea: the people who run
-          toward emergencies should be the ones you call when disaster hits your property.
+          First Response Property Solutions was founded on a simple idea: the discipline that
+          serves people on their worst days is exactly what your property deserves every day.
           <strong class="text-ink"> TODO(client): add the founder's service background</strong>
-          (military / fire / EMS / police) and what led them to restoration work.
+          (military / fire / EMS / police) and what led them to property services work.
         </p>
         <p>
-          We bring a first-responder mindset to every job — calm under pressure, fast to act,
-          and relentless about doing it right. From the first emergency call through the final
-          coat of paint, you get one accountable team that treats your home or business like
+          We bring a first-responder mindset to every job — squared away, on time, and
+          relentless about doing it right. From the first phone call through the final
+          walkthrough, you get one accountable team that treats your home or rental like
           our own.
         </p>
         <p>
-          We serve homeowners and businesses across {site.address.areaLabel}, and we work
-          directly with your insurance so recovery is one less thing to worry about.
+          We serve homeowners, landlords, and property managers across {site.address.areaLabel} —
+          one crew for maintenance, inspections, repairs, cleanup, and hauling, inside and out.
         </p>
       </div>
       <aside class="rounded-xl border border-line border-l-4 border-l-gold bg-mist p-6">
         <h2 class="font-display text-h3 font-bold text-green-deep">Our Mission</h2>
         <p class="mt-2 text-mute">
-          To respond first, restore fast, and bring calm authority to people on the worst day
-          of their year.
+          To be the one call that solves it all — dependable hands for every property we're
+          trusted with.
         </p>
         <div class="mt-5"><TrustBadges /></div>
       </aside>

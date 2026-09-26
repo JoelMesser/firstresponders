@@ -7,8 +7,8 @@
 
 export interface Service {
   slug: string;
-  title: string; // short label, e.g. "Water Damage"
-  name: string; // full service name for schema, e.g. "Water Damage Restoration"
+  title: string; // short label, e.g. "Power Washing"
+  name: string; // full service name for schema, e.g. "Power Washing & Exterior Cleaning"
   icon: string;
   blurb: string; // 1-line teaser for cards
   /** Hero / intro paragraph on the detail page. */
@@ -19,281 +19,291 @@ export interface Service {
   process: { title: string; body: string }[];
   /** Why choose us, service-specific. */
   why: string[];
-  /** Insurance note specific to this service. */
-  insurance: string;
+  /** "Good to know" note specific to this service (pricing, scope, scheduling). */
+  note: string;
 }
 
 // TODO(client): replace all placeholder copy below with real, reviewed content.
 export const services: Service[] = [
   {
-    slug: 'water-damage',
-    title: 'Water Damage',
-    name: 'Water Damage Restoration',
-    icon: 'water',
-    blurb: 'Burst pipes, floods, and leaks — fast extraction and structural drying.',
+    slug: 'property-management',
+    title: 'Property Management Support',
+    name: 'Property Management & Maintenance',
+    icon: 'key',
+    blurb: 'Turnovers, maintenance, and on-call repairs for landlords and property managers.',
     intro:
-      'Water spreads fast and damage compounds by the hour. Our crews extract standing water, dry the structure, and stop secondary damage like warping and mold before it starts.',
+      'One reliable crew for your properties. We handle turnovers, recurring maintenance, and on-call repairs for landlords, property managers, and out-of-town owners — documented, cleanly invoiced, and done when we say.',
     problem:
-      'A burst pipe, appliance failure, roof leak, or flood can saturate floors, drywall, and framing within minutes. Left untreated, moisture wicks into wall cavities and subfloors, leading to mold and rot.',
+      'Juggling a different vendor for every small job — repairs, cleaning, inspections, hauling — burns hours and invites no-shows. Owners and managers need one accountable contact who shows up, communicates, and keeps the property rent-ready.',
     process: [
       {
-        title: 'Emergency response',
-        body: 'We answer 24/7 and dispatch quickly to stop the source and assess the damage.',
+        title: 'Walkthrough & punch list',
+        body: 'We walk the property with you (or for you) and build a clear punch list with photos.',
       },
-      {
-        title: 'Water extraction',
-        body: 'Truck-mounted and portable extractors remove standing water fast.',
-      },
-      {
-        title: 'Drying & dehumidification',
-        body: 'Air movers and commercial dehumidifiers dry structure and contents, monitored with moisture meters.',
-      },
-      {
-        title: 'Cleanup & restoration',
-        body: 'We clean, sanitize, and rebuild affected areas back to pre-loss condition.',
-      },
-    ],
-    why: [
-      'Rapid 24/7 dispatch to limit secondary damage',
-      'Moisture mapping and documented drying logs for your claim',
-      'Direct insurance billing and adjuster coordination',
-    ],
-    insurance:
-      'Most homeowner policies cover sudden, accidental water damage. We document moisture readings and damage for your adjuster and bill your insurer directly.',
-  },
-  {
-    slug: 'fire-smoke-damage',
-    title: 'Fire & Smoke Damage',
-    name: 'Fire & Smoke Damage Restoration',
-    icon: 'fire',
-    blurb: 'Soot, smoke odor, and structural cleanup after a fire.',
-    intro:
-      'After the fire is out, soot and smoke keep doing damage. We clean, deodorize, and rebuild — handling the heavy, hazardous, and detailed work so you can recover.',
-    problem:
-      'Smoke and soot are acidic and travel everywhere, etching surfaces and saturating contents with odor. Firefighting water adds a second layer of damage that must be dried out immediately.',
-    process: [
-      {
-        title: 'Assessment & securing',
-        body: 'We assess structural safety and board up or tarp to secure the property.',
-      },
-      {
-        title: 'Water removal & drying',
-        body: 'We address water and chemicals left from firefighting efforts.',
-      },
-      {
-        title: 'Soot & smoke cleanup',
-        body: 'Specialized cleaning of surfaces, contents, and HVAC removes soot and residue.',
-      },
-      {
-        title: 'Deodorization & rebuild',
-        body: 'Odor neutralization followed by full reconstruction of damaged areas.',
-      },
-    ],
-    why: [
-      'Soot and odor remediation, not just surface cleaning',
-      'Contents cleaning and pack-out when needed',
-      'One team from board-up through full reconstruction',
-    ],
-    insurance:
-      'Fire damage is typically covered under homeowner and commercial policies. We document the loss thoroughly and coordinate directly with your insurance.',
-  },
-  {
-    slug: 'mold-remediation',
-    title: 'Mold Remediation',
-    name: 'Mold Remediation',
-    icon: 'mold',
-    blurb: 'Containment, removal, and remediation of mold growth.',
-    intro:
-      'Mold is a moisture problem first and a cleaning problem second. We contain the area, remove affected materials safely, and fix the source so it does not return.',
-    problem:
-      'Mold can begin growing within 24-48 hours of water exposure and may hide inside walls, under flooring, and in HVAC systems. It can affect air quality and damage building materials.',
-    process: [
-      {
-        title: 'Inspection & containment',
-        body: 'We identify affected areas and contain them to prevent spore spread.',
-      },
-      {
-        title: 'Air filtration',
-        body: 'HEPA air scrubbers and negative air machines capture airborne spores.',
-      },
-      {
-        title: 'Removal & cleaning',
-        body: 'We remove and dispose of affected materials and clean salvageable surfaces.',
-      },
-      {
-        title: 'Source correction & restoration',
-        body: 'We address the underlying moisture and restore the area.',
-      },
-    ],
-    why: [
-      'Proper containment to protect the rest of your home',
-      'We fix the moisture source, not just the visible mold',
-      'Clear documentation of the remediation performed',
-    ],
-    insurance:
-      'Coverage for mold varies by policy and cause. We document the source and remediation, and help you understand what your insurer is likely to cover.',
-  },
-  {
-    slug: 'storm-damage',
-    title: 'Storm Damage',
-    name: 'Storm Damage Repair',
-    icon: 'storm',
-    blurb: 'Wind, hail, and flooding damage — emergency response and repair.',
-    intro:
-      'Storms hit fast and leave properties exposed. We provide emergency board-up and tarping, then handle water mitigation and full repairs.',
-    problem:
-      'High winds, fallen trees, hail, and flooding can breach roofs and walls, letting water pour in and exposing your property to further loss until it is secured.',
-    process: [
-      {
-        title: 'Emergency securing',
-        body: 'Board-up, roof tarping, and water diversion to stop ongoing damage.',
-      },
-      {
-        title: 'Water mitigation',
-        body: 'Extraction and drying of any water intrusion from the storm.',
-      },
-      {
-        title: 'Debris & damage assessment',
-        body: 'We remove debris and document all storm-related damage.',
-      },
-      {
-        title: 'Repairs & reconstruction',
-        body: 'Roofing, structural, and interior repairs back to pre-loss condition.',
-      },
-    ],
-    why: [
-      '24/7 emergency board-up and tarping',
-      'Full-service from securing the property to final repairs',
-      'Storm-damage documentation for your claim',
-    ],
-    insurance:
-      'Storm and wind damage is commonly covered. We photograph and document everything and work directly with your adjuster.',
-  },
-  {
-    slug: 'sewage-biohazard',
-    title: 'Sewage & Biohazard',
-    name: 'Sewage & Biohazard Cleanup',
-    icon: 'biohazard',
-    blurb: 'Safe cleanup and sanitization of sewage and biohazards.',
-    intro:
-      'Sewage backups and biohazards are health risks, not DIY jobs. We clean, disinfect, and safely dispose of contaminated materials with the proper protective equipment.',
-    problem:
-      'Sewage backups (Category 3 "black water") and other biohazards contain bacteria and pathogens. Improper cleanup risks illness and lingering contamination.',
-    process: [
-      {
-        title: 'Containment & safety',
-        body: 'We isolate the area and use proper PPE and protocols.',
-      },
-      {
-        title: 'Extraction & removal',
-        body: 'Contaminated water and unsalvageable materials are removed and disposed of safely.',
-      },
-      {
-        title: 'Cleaning & disinfection',
-        body: 'Affected areas are cleaned and sanitized with EPA-registered disinfectants.',
-      },
-      {
-        title: 'Drying & restoration',
-        body: 'We dry the structure and restore the space to a safe condition.',
-      },
-    ],
-    why: [
-      'Trained, equipped crews for hazardous cleanup',
-      'Proper disposal and disinfection protocols',
-      'Discreet, respectful service',
-    ],
-    insurance:
-      'Sewage backup may require specific policy endorsements. We document the loss and help you navigate coverage.',
-  },
-  {
-    slug: 'selective-demolition',
-    title: 'Selective Demolition',
-    name: 'Selective Demolition',
-    icon: 'demolition',
-    blurb: 'Careful removal of damaged materials to prep for restoration.',
-    intro:
-      'Restoration often starts with controlled removal. We strip out damaged materials precisely — protecting what can be saved and preparing the structure for rebuild.',
-    problem:
-      'Water-, fire-, and mold-damaged materials must be removed before drying and rebuilding can succeed. Done carelessly, demolition damages salvageable structure and spreads contamination.',
-    process: [
-      {
-        title: 'Scope & protection',
-        body: 'We identify what must come out and protect adjacent areas.',
-      },
-      {
-        title: 'Controlled removal',
-        body: 'Damaged drywall, flooring, and materials are removed cleanly.',
-      },
-      { title: 'Debris disposal', body: 'Materials are hauled and disposed of properly.' },
-      {
-        title: 'Prep for rebuild',
-        body: 'The space is cleaned and prepared for drying or reconstruction.',
-      },
-    ],
-    why: [
-      'Precision removal that protects salvageable structure',
-      'Coordinated as part of the full restoration timeline',
-      'Clean, documented site handoff to the rebuild crew',
-    ],
-    insurance:
-      'Demolition required by a covered loss is generally part of the claim. We document scope and quantities for your adjuster.',
-  },
-  {
-    slug: 'reconstruction',
-    title: 'Reconstruction',
-    name: 'Reconstruction & Rebuild',
-    icon: 'reconstruction',
-    blurb: 'Full rebuild back to pre-loss condition — one team, start to finish.',
-    intro:
-      'When mitigation is done, the rebuild begins. From drywall to flooring to finish work, we restore your property to pre-loss condition with one accountable team.',
-    problem:
-      'After damage and demolition, your property needs to be rebuilt. Juggling separate contractors for each trade adds delay, cost, and finger-pointing.',
-    process: [
       {
         title: 'Scope & estimate',
-        body: 'We define the rebuild scope and provide a documented estimate.',
+        body: 'You get an itemized estimate — what we recommend now, and what can wait.',
       },
-      { title: 'Structural & rough-in', body: 'Framing, drywall, and systems are restored.' },
-      { title: 'Finishes', body: 'Flooring, paint, trim, fixtures, and final details.' },
       {
-        title: 'Final walkthrough',
-        body: 'We confirm the work meets your expectations and pre-loss standard.',
+        title: 'Scheduled work',
+        body: 'One crew handles repairs, cleaning, yard work, and hauling on a schedule you approve.',
+      },
+      {
+        title: 'Report & invoice',
+        body: 'Before/after photos and a clean, itemized invoice — easy to file or pass through to owners.',
       },
     ],
     why: [
-      'One team from emergency response through final rebuild',
-      'Single point of accountability — no contractor juggling',
-      'Insurance-aligned estimates and documentation',
+      'One contact for repairs, maintenance, inspections, and hauling',
+      'Photo documentation before and after every job',
+      'Clean, itemized invoices that are easy to pass through to owners',
     ],
-    insurance:
-      'Reconstruction of covered damage is part of your claim. We align our estimate with your insurer to streamline approval.',
+    note: 'We support single rentals up to small portfolios. Ask about recurring maintenance visits and per-property pricing — estimates are always free.',
   },
   {
-    slug: 'board-up-tarping',
-    title: 'Board-Up & Tarping',
-    name: 'Emergency Board-Up & Roof Tarping',
-    icon: 'boardup',
-    blurb: 'Secure your property fast after fire, storm, or break-in.',
+    slug: 'property-inspections',
+    title: 'Property Inspections',
+    name: 'Property & Site Inspections',
+    icon: 'clipboard',
+    blurb: 'Roof, drainage, gutter, and fence inspections with clear photo reports.',
     intro:
-      'When your property is exposed, every hour matters. We respond 24/7 to board up openings and tarp roofs, securing the building against weather, intrusion, and further loss.',
+      'Know the condition of your property before small issues become expensive ones. We inspect roofs, drainage, gutters, fences, and exteriors, then hand you a straightforward photo report with recommendations — not a sales pitch.',
     problem:
-      'A fire, storm, or break-in can leave windows, doors, and roofs open to the elements and to trespassers, compounding the original damage.',
+      'Deferred problems are quiet: a clogged downspout, ponding water at the foundation, a leaning fence post, lifted shingles. By the time they announce themselves, the repair bill has multiplied.',
     process: [
-      { title: 'Rapid dispatch', body: 'We respond 24/7 to secure your property quickly.' },
-      { title: 'Board-up', body: 'Openings are boarded to keep out weather and intruders.' },
-      { title: 'Roof tarping', body: 'Damaged roofs are tarped to prevent water intrusion.' },
       {
-        title: 'Transition to repair',
-        body: 'Once secured, we plan mitigation and reconstruction.',
+        title: 'Schedule a visit',
+        body: 'Pick a time that works — occupied or vacant, we coordinate access.',
+      },
+      {
+        title: 'On-site inspection',
+        body: 'Roof and drainage, gutters, fences and gates, exterior surfaces, and trouble spots you flag.',
+      },
+      {
+        title: 'Photo report',
+        body: 'A clear written summary with photos: what is fine, what needs attention, what is urgent.',
+      },
+      {
+        title: 'Fix-it options',
+        body: 'If you want repairs, we quote them separately — no obligation, no pressure.',
       },
     ],
     why: [
-      'True 24/7 emergency availability',
-      'Stops secondary damage and protects against liability',
-      'Seamless handoff into full restoration',
+      'Plain-language reports with photos, not jargon',
+      'We can fix what we find — or just hand you the report',
+      'Great for rentals: move-in/move-out and seasonal checkups',
     ],
-    insurance:
-      'Emergency mitigation like board-up and tarping is generally covered to prevent further loss. We document it for your claim.',
+    note: 'Inspections work standalone or bundled with a service visit. Landlords: ask about seasonal inspection schedules for your units.',
+  },
+  {
+    slug: 'handyman-services',
+    title: 'Handyman Services',
+    name: 'Handyman & General Repairs',
+    icon: 'tools',
+    blurb: 'Interior and exterior repairs, punch lists, and odd jobs — handled.',
+    intro:
+      'Doors that stick, fixtures that wobble, drywall dings, the punch list that keeps growing. We knock out repairs and small projects inside and out in one scheduled visit — done right, cleaned up, and crossed off your list.',
+    problem:
+      "Small repairs are hard to hire for: big contractors won't take them, and unvetted help is a gamble. So the list grows — and small problems (a loose rail, a soft board, a sagging gate) become safety issues and bigger bills.",
+    process: [
+      {
+        title: 'Send your list',
+        body: 'Tell us what needs doing — photos help. No job list is too small.',
+      },
+      {
+        title: 'Estimate & schedule',
+        body: 'We quote the visit up front and book a window that works for you.',
+      },
+      {
+        title: 'One efficient visit',
+        body: 'We arrive with the right tools and materials and work through the list.',
+      },
+      {
+        title: 'Walkthrough',
+        body: 'You review the work with us before we leave. Clean site, no surprises.',
+      },
+    ],
+    why: [
+      'One visit handles a whole punch list — efficient labor, not per-job markups',
+      'Veteran & first-responder work ethic: on time, squared away',
+      'Honest advice when something is beyond a repair',
+    ],
+    note: 'Hourly labor with a clear estimate up front. Bundle several small jobs into one visit to get the most from the trip charge.',
+  },
+  {
+    slug: 'power-washing',
+    title: 'Power Washing',
+    name: 'Power Washing & Exterior Cleaning',
+    icon: 'spray',
+    blurb: 'Siding, brick, porches, patios, and pavers — years of grime gone in a day.',
+    intro:
+      'Nothing transforms a property faster. We power wash siding (vinyl and brick, single or two-story), stone porches, patios, walkways, and pavers — restoring curb appeal and protecting surfaces from grime, mold, and algae buildup.',
+    problem:
+      'Maryland humidity feeds algae, mildew, and grime on every exterior surface. It looks bad, gets slippery underfoot, and slowly degrades siding, mortar, and pavers — and it never gets better on its own.',
+    process: [
+      {
+        title: 'Surface assessment',
+        body: 'Vinyl, brick, stone, and concrete each get the right pressure and detergent.',
+      },
+      {
+        title: 'Prep & protect',
+        body: 'We protect plants, fixtures, and openings before any water flows.',
+      },
+      {
+        title: 'Wash & rinse',
+        body: 'Methodical, top-down cleaning — including two-story siding and tight paver joints.',
+      },
+      {
+        title: 'Final walkthrough',
+        body: 'We inspect every surface with you and leave the site clean and drained.',
+      },
+    ],
+    why: [
+      'Right pressure for each surface — no stripped siding or etched mortar',
+      'Two-story homes, patios, stone porches, and paver walkways',
+      'Pairs well with gutter cleaning and yard cleanup in one visit',
+    ],
+    note: 'Most homes are done in a day. Bundling power washing with gutter cleaning or yard cleanup saves on the combined visit — ask for a package price.',
+  },
+  {
+    slug: 'gutter-services',
+    title: 'Gutter Services',
+    name: 'Gutter Cleaning, Flush & Repair',
+    icon: 'gutter',
+    blurb: 'Cleaning, downspout flushing, re-securing, and minor repairs.',
+    intro:
+      'Gutters only work when water actually moves through them. We clear debris, flush every downspout, re-secure loose runs, and make minor repairs — then check that water drains away from your foundation like it should.',
+    problem:
+      'Clogged or sagging gutters dump water against your foundation and behind your fascia. That turns into rot, basement moisture, and landscape erosion — hundreds in maintenance deferred into thousands in repairs.',
+    process: [
+      {
+        title: 'Clear & clean',
+        body: 'All debris scooped and bagged from gutter runs — not blown into the yard.',
+      },
+      {
+        title: 'Flush & test',
+        body: 'Every downspout flushed and verified flowing, end to end.',
+      },
+      {
+        title: 'Re-secure & repair',
+        body: 'Loose hangers, separated seams, and minor damage fixed on the spot where possible.',
+      },
+      {
+        title: 'Drainage check',
+        body: 'We confirm water exits away from the foundation and flag anything bigger.',
+      },
+    ],
+    why: [
+      'Flush-tested downspouts — not just scooped gutters',
+      'Minor repairs handled in the same visit',
+      'Photo documentation of before and after',
+    ],
+    note: 'Most Maryland homes need gutter cleaning twice a year — late fall and spring. Ask about recurring visits so it never gets missed.',
+  },
+  {
+    slug: 'yard-cleanup',
+    title: 'Yard & Overgrowth Cleanup',
+    name: 'Yard Cleanup & Overgrowth Removal',
+    icon: 'leaf',
+    blurb: 'Overgrowth, saplings, and roots cleared — beds, pavers, and fence lines reclaimed.',
+    intro:
+      'When a yard gets away from you — or from a tenant — we bring it back. We clear overgrowth from beds, pavers, and fence lines, remove saplings and roots, and haul everything away so the property looks managed again.',
+    problem:
+      'Overgrowth lifts pavers, roots work into walkways and foundations, and volunteer saplings turn into trees in the wrong places. Left alone, a scruffy yard becomes hardscape damage — and a red flag to neighbors, buyers, and inspectors.',
+    process: [
+      {
+        title: 'Walk & scope',
+        body: 'We agree on exactly what gets cleared, trimmed, and removed.',
+      },
+      {
+        title: 'Cut & clear',
+        body: 'Overgrowth, brush, and volunteer saplings removed — including from paver joints and fence lines.',
+      },
+      {
+        title: 'Root removal',
+        body: 'Problem roots dug or ground out so they stop lifting hardscape.',
+      },
+      {
+        title: 'Haul & tidy',
+        body: 'All green waste hauled away. The property is left clean, not piled.',
+      },
+    ],
+    why: [
+      'Saplings and roots actually removed — not just cut to regrow',
+      'Pavers and walkways cleared without damage',
+      'Debris hauled away as part of the job',
+    ],
+    note: 'Great before listing a property, between tenants, or after a season of deferred maintenance. We can quote from photos for straightforward jobs.',
+  },
+  {
+    slug: 'debris-removal',
+    title: 'Debris & Waste Removal',
+    name: 'Debris & Waste Removal',
+    icon: 'truck',
+    blurb: 'Junk, brush, and project debris hauled away — no HAZMAT.',
+    intro:
+      'Tenant left a mess? Project debris piling up? We load and haul junk, brush, and construction debris responsibly — so your property is clean, safe, and ready for what is next. (No hazardous materials.)',
+    problem:
+      'Debris attracts pests, kills curb appeal, and can violate county code or an HOA. Renting a dumpster means loading it yourself; we bring the labor and the truck.',
+    process: [
+      {
+        title: 'Tell us the pile',
+        body: 'Photos and a rough size are enough for a quick estimate.',
+      },
+      {
+        title: 'We load it',
+        body: 'Our crew does the lifting — inside, outside, garage, or yard.',
+      },
+      {
+        title: 'We haul it',
+        body: 'Responsible disposal and recycling where possible.',
+      },
+      {
+        title: 'Swept clean',
+        body: 'The area is left broom-clean, with photos to confirm.',
+      },
+    ],
+    why: [
+      'Labor included — we load, you point',
+      'Great for turnovers, cleanouts, and post-project cleanup',
+      'Clear up-front pricing by volume',
+    ],
+    note: 'We do not handle hazardous materials (paint, chemicals, asbestos, fuel). Ask and we will point you to the right county disposal resource.',
+  },
+  {
+    slug: 'fence-gate',
+    title: 'Fence & Gate Repair',
+    name: 'Fence & Gate Repair',
+    icon: 'fence',
+    blurb: 'Sagging gates, leaning posts, and damaged sections — squared away.',
+    intro:
+      'A fence is only as good as its weakest post. We repair sagging gates, reset leaning posts, replace damaged boards and hardware, and inspect the full run so your fence is solid, straight, and secure.',
+    problem:
+      'Gates sag, posts rot at the ground line, and one failed section lets pets out and liability in. Full fence replacement is expensive — most fences just need the right repairs at the right time.',
+    process: [
+      {
+        title: 'Fence inspection',
+        body: 'We walk the full run and document every post, panel, and hinge that needs attention.',
+      },
+      {
+        title: 'Repair plan',
+        body: 'An itemized estimate: repair what is sound, replace only what is not.',
+      },
+      {
+        title: 'The fix',
+        body: 'Posts reset, gates rehung and aligned, hardware and boards replaced.',
+      },
+      {
+        title: 'Final check',
+        body: 'Every gate swings, latches, and locks the way it should.',
+      },
+    ],
+    why: [
+      'Repair-first approach — replacement only when it is truly needed',
+      'Gate alignment and hardware done right, not forced',
+      'Fence inspections available standalone for rentals and sales',
+    ],
+    note: 'Wood, vinyl, and chain-link. If a fence is beyond repair, we will tell you straight and quote the honest options.',
   },
 ];
 

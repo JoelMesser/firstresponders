@@ -1,7 +1,7 @@
 ---
 /**
  * Sitewide LocalBusiness JSON-LD. Rendered once per page via BaseLayout.
- * areaServed = counties; openingHours = 24/7.
+ * areaServed = counties; open 7 days a week (exact hours TODO(client)).
  */
 import { site } from '../../config/site';
 import { counties } from '../../data/counties';
@@ -40,8 +40,6 @@ const json = {
     {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      opens: '00:00',
-      closes: '23:59',
     },
   ],
   sameAs: Object.values(site.social).filter(Boolean),

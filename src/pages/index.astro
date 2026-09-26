@@ -3,8 +3,8 @@ import Button from '../components/Button.astro';
 import CountyChips from '../components/CountyChips.astro';
 import CtaBand from '../components/CtaBand.astro';
 import Hero from '../components/Hero.astro';
+import HowItWorks from '../components/HowItWorks.astro';
 import Icon from '../components/Icon.astro';
-import InsuranceSteps from '../components/InsuranceSteps.astro';
 import ReviewCard from '../components/ReviewCard.astro';
 import Section from '../components/Section.astro';
 import ServiceGrid from '../components/ServiceGrid.astro';
@@ -16,8 +16,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const whyUs = [
   {
     icon: 'clock',
-    title: 'True 24/7 Response',
-    body: "Disasters don't keep business hours. We answer and dispatch around the clock, every day.",
+    title: 'We Actually Show Up',
+    body: 'Scheduled means scheduled. We confirm, we arrive, and we finish when we said we would.',
   },
   {
     icon: 'badge',
@@ -27,12 +27,12 @@ const whyUs = [
   {
     icon: 'shield',
     title: 'Licensed & Insured',
-    body: 'Qualified crews and full coverage — TODO(client): add license #s and IICRC certs.',
+    body: 'Qualified crews and full coverage — TODO(client): add license #s.',
   },
   {
     icon: 'doc',
-    title: 'Insurance Made Easy',
-    body: 'We document everything and bill your insurer directly, so you can focus on recovery.',
+    title: 'Documented & Itemized',
+    body: 'Free estimates up front, before/after photos, and one clean invoice — no surprises.',
   },
   {
     icon: 'map',
@@ -41,13 +41,13 @@ const whyUs = [
   },
   {
     icon: 'check',
-    title: 'One Team, Start to Finish',
-    body: 'From emergency mitigation through full reconstruction — no contractor juggling.',
+    title: 'One Crew for the Whole List',
+    body: 'Repairs, maintenance, cleanup, and hauling — inside and out. No vendor juggling.',
   },
 ];
 ---
 <BaseLayout
-  title={`${site.name} | 24/7 Emergency Restoration in Central Maryland`}
+  title={`${site.name} | Property Management, Inspections & Handyman Services in Central Maryland`}
   description={site.description}
 >
   <Hero showForm />
@@ -56,8 +56,8 @@ const whyUs = [
   <Section
     tone="mist"
     eyebrow="What We Do"
-    title="Emergency Restoration & Repair Services"
-    lede="Water, fire, mold, storm, and more — we handle the whole job, from securing your property to the final rebuild."
+    title="Property Services, Inside and Out"
+    lede="Management support, inspections, handyman repairs, power washing, gutters, yard cleanup, and hauling — one trusted crew for the whole list."
   >
     <ServiceGrid />
     <div class="mt-8">
@@ -65,20 +65,20 @@ const whyUs = [
     </div>
   </Section>
 
-  <!-- Insurance steps -->
+  <!-- How it works -->
   <Section
-    eyebrow="Insurance"
-    title="We Work Directly With Your Insurance"
-    lede="Filing a claim is stressful. We make it simple — documenting the damage and dealing with your adjuster so you don't have to."
+    eyebrow="How It Works"
+    title="Simple From First Call to Final Walkthrough"
+    lede="No runaround, no surprise charges — a clear estimate, scheduled work, and one clean invoice."
   >
-    <InsuranceSteps />
+    <HowItWorks />
     <div class="mt-8">
-      <Button href="/insurance/" variant="secondary">How the Claim Process Works</Button>
+      <Button href="/contact/" variant="secondary">Get a Free Estimate</Button>
     </div>
   </Section>
 
   <!-- Why us -->
-  <Section tone="tint" eyebrow="Why First Response" title="Calm Authority When You Need It Most">
+  <Section tone="tint" eyebrow="Why First Response" title="A Crew You Can Hand the Keys To">
     <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {
         whyUs.map((item) => (
@@ -98,7 +98,7 @@ const whyUs = [
   <Section
     tone="mist"
     eyebrow="Reviews"
-    title="Trusted by Maryland Homeowners"
+    title="Trusted by Maryland Homeowners & Landlords"
     lede="TODO(client): replace placeholder reviews with real testimonials."
   >
     <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -113,7 +113,7 @@ const whyUs = [
   <Section
     eyebrow="Service Areas"
     title="Serving Central Maryland"
-    lede="Fast, local 24/7 response across the counties we serve."
+    lede="Local crews, fast scheduling, and honest timelines across the counties we serve."
   >
     <CountyChips />
     <div class="mt-8">

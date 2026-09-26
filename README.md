@@ -1,6 +1,7 @@
 # First Response Property Solutions — Website
 
-Production marketing site for a 24/7 emergency property restoration company serving
+Production marketing site for a property services company (property management
+support, inspections, handyman work, and interior/exterior maintenance) serving
 Central Maryland. Built to **drive phone calls and form leads**.
 
 - **Stack:** [Astro 5](https://astro.build) (static/SSG) + [Tailwind CSS v4](https://tailwindcss.com) (`@tailwindcss/vite`)
@@ -67,19 +68,19 @@ npx wrangler pages dev dist      # serves static + functions together
 
 ## Before launch — client TODOs (search the codebase for `TODO(client)`)
 
-1. **Phone number** — `555-555-5555` is a placeholder (and not dialable). Replace with
-   the real local **410 / 443 / 240 / 301** number in `src/config/site.ts` (one place).
-2. **Production domain** — update `site` in `astro.config.mjs`, the `Sitemap:` line in
-   `public/robots.txt`, and `site.url` in `src/config/site.ts`.
-3. **Resend** — create an API key and verify a sending domain; set the env vars above.
+1. **Phone number** — ✅ `317-919-2451` (matches the logo art) in `src/config/site.ts`.
+2. **Production domain** — ✅ `frpsmd.com` set in `astro.config.ts`, `public/robots.txt`,
+   and `src/config/site.ts`. Still needed: create the `help@` / `leads@` inboxes.
+3. **Resend** — create an API key and verify `frpsmd.com` as a sending domain; set the
+   env vars above.
 4. **Turnstile** — create a Turnstile widget; set site + secret keys (defaults are
    Cloudflare's "always passes" TEST keys).
 5. **Real content** — replace all placeholder copy, the founder/veteran story (`/about`),
-   reviews (don't publish fabricated ones), license numbers & certifications (e.g. IICRC).
+   reviews (don't publish fabricated ones), and license numbers.
 6. **Assets** — ✅ real logo integrated (`public/logo-mark.png` / `logo-full.png` →
-   header/footer, favicons, `og-default.png`). Still needed: hero photo (slot in
-   `src/components/Hero.astro`). ⚠️ The logo art bakes in **317-919-2451**; regenerate it
-   once the real MD number is set so it matches the click-to-call number.
+   header/footer, favicons, `og-default.png`). ✅ Per-service stock photos installed
+   (`public/images/services/` — sources in `public/images/IMAGE-CREDITS.md`); swap in
+   real job-site photos when available.
 7. **Legal** — finalize `/privacy` and `/accessibility`.
 
 ## SEO included

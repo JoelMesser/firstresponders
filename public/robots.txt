@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# TODO(client): confirm production domain below matches astro.config.ts `site`.
-Sitemap: https://firstresponsepropertysolutions.com/sitemap.xml
+Sitemap: https://frpsmd.com/sitemap-index.xml

@@ -1,8 +1,8 @@
 ---
 import Button from '../../components/Button.astro';
 import CtaBand from '../../components/CtaBand.astro';
+import HowItWorks from '../../components/HowItWorks.astro';
 import Icon from '../../components/Icon.astro';
-import InsuranceSteps from '../../components/InsuranceSteps.astro';
 import LeadForm from '../../components/LeadForm.astro';
 import Section from '../../components/Section.astro';
 import ServiceCard from '../../components/ServiceCard.astro';
@@ -20,8 +20,8 @@ export function getStaticPaths() {
 }
 
 const { county } = Astro.props;
-const heading = `24/7 Emergency Restoration in ${county.name}`;
-const description = `Veteran & first-responder owned restoration in ${county.name}, MD. Water, fire, mold, storm, and biohazard cleanup plus full reconstruction. Call ${site.phone.display}.`;
+const heading = `Property Services in ${county.name}`;
+const description = `Veteran & first-responder owned property services in ${county.name}, MD: management support, inspections, handyman repairs, power washing, gutters, yard cleanup, and hauling. Call ${site.phone.display}.`;
 ---
 <BaseLayout title={heading} description={description}>
   <Breadcrumbs
@@ -42,7 +42,7 @@ const description = `Veteran & first-responder owned restoration in ${county.nam
         <h1 class="mt-5 text-hero font-extrabold text-ink">{heading}</h1>
         <p class="mt-4 max-w-xl text-lg text-mute">
           {county.blurb} We're veteran & first-responder owned, licensed & insured, and we
-          work directly with your insurance.
+          show up when we say we will.
         </p>
         <div class="mt-7 flex flex-col gap-3 sm:flex-row">
           <Button href={site.phone.href} size="lg" icon="phone">Call {site.phone.display}</Button>
@@ -84,8 +84,8 @@ const description = `Veteran & first-responder owned restoration in ${county.nam
         </p>
         <h2 class="mt-3 text-3xl font-extrabold text-ink sm:text-h2">Get Help in {county.short} County</h2>
         <p class="mt-4 max-w-xl text-lg text-mute">
-          For an active emergency, calling is fastest. Otherwise, send a few details and we'll
-          respond right away.
+          Send a few details and we'll respond fast with an honest estimate. Urgent issue?
+          Calling is fastest.
         </p>
         <a
           href={site.phone.href}
@@ -93,7 +93,7 @@ const description = `Veteran & first-responder owned restoration in ${county.nam
         >
           <Icon name="phone" size={24} />
           <span>
-            <span class="block font-display text-caption font-semibold uppercase tracking-wide text-white/80">Call 24/7</span>
+            <span class="block font-display text-caption font-semibold uppercase tracking-wide text-white/80">Call Us</span>
             <span class="block font-display text-xl font-extrabold">{site.phone.display}</span>
           </span>
         </a>
@@ -102,7 +102,7 @@ const description = `Veteran & first-responder owned restoration in ${county.nam
         <div class="h-1 w-full rule-accent" aria-hidden="true"></div>
         <div class="p-5 sm:p-6">
           <h3 class="font-display text-xl font-extrabold text-green-deep">Get Help in {county.short}</h3>
-          <p class="mt-1 text-sm text-mute">Active emergency? <a href={site.phone.href} class="font-bold text-red underline">Call {site.phone.display}</a>.</p>
+          <p class="mt-1 text-sm text-mute">Urgent issue? <a href={site.phone.href} class="font-bold text-red underline">Call {site.phone.display}</a>.</p>
           <div class="mt-4"><LeadForm compact /></div>
         </div>
       </div>
@@ -113,8 +113,8 @@ const description = `Veteran & first-responder owned restoration in ${county.nam
   <Section
     tone="mist"
     eyebrow="Services"
-    title={`Restoration Services in ${county.short} County`}
-    lede="Full-service emergency response and repair, available around the clock."
+    title={`Property Services in ${county.short} County`}
+    lede="Management support, inspections, repairs, and maintenance — inside and out, on your schedule."
   >
     <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
       {services.map((service) => <ServiceCard service={service} />)}
@@ -137,10 +137,10 @@ const description = `Veteran & first-responder owned restoration in ${county.nam
     </p>
   </Section>
 
-  <!-- Insurance -->
-  <Section tone="mist" eyebrow="Insurance" title="We Work Directly With Your Insurer">
-    <InsuranceSteps />
+  <!-- How it works -->
+  <Section tone="mist" eyebrow="How It Works" title="Simple From First Call to Final Walkthrough">
+    <HowItWorks />
   </Section>
 
-  <CtaBand title={`Property Damage in ${county.short} County? Call Now.`} subtitle={`24/7 emergency response across ${county.name}.`} />
+  <CtaBand title={`Need a Hand in ${county.short} County?`} subtitle={`One call can solve it all across ${county.name}. Free estimates.`} />
 </BaseLayout>

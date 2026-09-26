@@ -1,7 +1,7 @@
 /**
  * FAQ seed content — drives /faq accordion + FAQPage JSON-LD.
  * TODO(client): review answers for accuracy (especially licensing, pricing,
- * and response-time claims).
+ * and scheduling claims).
  */
 
 export interface Faq {
@@ -11,24 +11,24 @@ export interface Faq {
 
 export const faqs: Faq[] = [
   {
-    question: 'How fast can you respond to an emergency?',
+    question: 'What services do you offer?',
     answer:
-      'We answer calls 24/7 and dispatch crews as fast as possible — emergencies are our priority. For an active emergency, call us now rather than filling out a form, so we can get moving immediately.',
+      'Property management support, property inspections, handyman repairs, power washing, gutter cleaning and repair, yard and overgrowth cleanup, debris and waste removal (no hazardous materials), and fence and gate repair. If it keeps a property in shape, one call can usually cover it.',
   },
   {
-    question: 'Does insurance cover the damage?',
+    question: 'Do you work with landlords and property managers?',
     answer:
-      'Most sudden, accidental damage (burst pipes, fire, storms) is covered by homeowner and commercial policies. Coverage depends on your policy and the cause of loss. We document everything thoroughly and work directly with your insurer to streamline your claim.',
+      'Yes — that is a core part of what we do. We handle turnovers, recurring maintenance visits, inspections, and on-call repairs across single rentals and small portfolios, with photo documentation and clean itemized invoices that are easy to pass through to owners.',
   },
   {
-    question: 'How much does restoration cost?',
+    question: 'How much does it cost?',
     answer:
-      'Cost depends on the type and extent of damage. Because most jobs go through insurance, your out-of-pocket is often limited to your deductible. We provide documented estimates and bill your insurance directly. TODO(client): confirm any free-estimate / no-obligation language.',
+      'Estimates are free and itemized, so you see exactly what each line of work costs before we start. For straightforward jobs (debris piles, small repairs) we can often quote from photos. TODO(client): confirm pricing language, trip-charge policy, and any bundle discounts.',
   },
   {
     question: 'Are you licensed and insured?',
     answer:
-      'Yes. We are licensed and insured to perform restoration and reconstruction work in Maryland. TODO(client): list license numbers and certifications (e.g. IICRC) here for trust and SEO.',
+      'Yes. We are licensed and insured to work on residential and rental properties in Maryland. TODO(client): list license numbers here for trust and SEO.',
   },
   {
     question: 'What areas do you serve?',
@@ -36,8 +36,13 @@ export const faqs: Faq[] = [
       'We serve Central Maryland, including Anne Arundel, Howard, Baltimore, Prince George’s, Montgomery, Carroll, Frederick, and Harford counties. Not sure if you’re in our area? Call us and ask.',
   },
   {
-    question: 'What should I do first after damage occurs?',
+    question: 'How fast can you schedule work?',
     answer:
-      'Make sure everyone is safe and, if it is safe to do so, stop the source (shut off water, leave the building in a fire). Then call us. Avoid entering areas with structural, electrical, or contamination hazards. Document damage with photos if you can — but safety and a fast call come first.',
+      'Most jobs are scheduled within days, not weeks, and urgent property issues — a failed gate, an overflowing gutter before a storm, a turnover on a deadline — get priority. Call and we will give you an honest timeline up front.',
+  },
+  {
+    question: 'Do you haul away debris and junk?',
+    answer:
+      'Yes. We load and haul junk, brush, and project debris, and we leave the area broom-clean. We do not handle hazardous materials (paint, chemicals, asbestos, fuel) — but we can point you to the right county disposal resource.',
   },
 ];
